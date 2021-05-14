@@ -25,7 +25,7 @@ module Backend
       t.column :name, url: true
       t.column :code, url: true
       t.column :updater
-      t.column :state
+      t.column :state, label_method: 'state.tl'
       t.column :created_at
     end
 
