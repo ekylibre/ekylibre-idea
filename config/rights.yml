@@ -1,0 +1,8 @@
+# THESE FOLLOWING ACTIONS ARE PUBLICLY ACCESSIBLE
+#     - "idea/dashboards/idea"
+#     - "backend/idea_diagnostics#show"
+#     - "backend/idea_diagnostics#index"
+#     - "backend/idea_diagnostics#new"
+#     - "backend/backend/idea_diagnostic_results#show"
+#     - "backend/backend/idea_diagnostic_results#index"
+#     - "backend/backend/idea_diagnostic_results#new"

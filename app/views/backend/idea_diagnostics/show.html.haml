@@ -1,0 +1,13 @@
+- main_toolbar do |t|
+  = t.edit resource
+= main_informations do
+  = infos do
+    .med-info
+      %span.title= :code.tl
+      %span.value= resource.code
+    .med-info.campaign
+      %span.title= :campaign.tl
+      %span.value= resource.campaign.name
+    .med-info.important
+      %span.title= :idea_auditor.tl
+      %span.value= resource.updater.name

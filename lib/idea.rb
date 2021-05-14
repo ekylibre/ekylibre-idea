@@ -2,6 +2,7 @@
 
 require 'idea/engine'
 require 'idea/version'
+require 'idea/ext_navigation'
 
 # Analytics on farm performance towards durability
 module Idea
@@ -16,4 +17,9 @@ module Idea
   def self.permanent_grassland_codes
     transcodings.permanent_grassland.map(&:code)
   end
+
+  def self.root
+    Pathname.new(File.dirname(__dir__))
+  end
+
 end
