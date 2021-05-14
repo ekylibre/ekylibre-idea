@@ -1,0 +1,18 @@
+eng:
+  actions:
+    backend/dashboards:
+      idea: "Durability"
+    backend/idea_diagnostic_results:
+      index: "IDEA results"
+    backend/idea_diagnostics:
+      new: "New IDEA diagnostic"
+      index: "IDEA diagnostics "
+      show: "IDEA diagnostic : %{code}"
+  labels:
+    durability: 'Durability'
+    diagnostic: "IDEA diagnostic "
+    new_diagnostic: "New IDEA diagnostic"
+    new_diagnostic_name: "New IDEA diagnostic %{name}"
+    code: "Code"
+    idea_auditor: "Auditor"
+    idea_doing: "In progress"

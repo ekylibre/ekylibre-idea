@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigation>
+  <part name="idea" icon="tree" after-part="production">
+    <page to="backend/dashboards#idea"/>
+    <group name="durability">
+      <item name="durability">
+      	<page to="backend/idea_diagnostics#index"/>
+        <page to="backend/idea_diagnostics#show"/>
+        <page to="backend/idea_diagnostics#edit"/>
+        <page to="backend/idea_diagnostics#new"/>
+        <page to="backend/idea_diagnostics#unroll"/>
+        <page to="backend/idea_diagnostics#create"/>
+        <page to="backend/idea_diagnostics#destroy"/>
+        <page to="backend/idea_diagnostics#list"/>
+      </item>
+      <item name="durability">
+        <page to="backend/idea_diagnostic_results#index"/>
+        <page to="backend/idea_diagnostic_results#show"/>
+        <page to="backend/idea_diagnostic_results#edit"/>
+        <page to="backend/idea_diagnostic_results#new"/>
+        <page to="backend/idea_diagnostic_results#unroll"/>
+        <page to="backend/idea_diagnostic_results#create"/>
+        <page to="backend/idea_diagnostic_results#destroy"/>
+        <page to="backend/idea_diagnostic_results#list"/>
+      </item>
+    </group>
+  </part>
+</navigation>
