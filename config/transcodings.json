@@ -1,0 +1,228 @@
+{
+  "permanent_grassland": [
+    {
+      "code": "PRL",
+      "cap_label": "Prairie en rotation longue (6 ans ou plus)",
+      "production": "meadow"
+    },
+    {
+      "code": "PPH",
+      "cap_label": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+      "production": "meadow"
+    },
+    {
+      "code": "SPH",
+      "cap_label": "Surface pastorale - herbe prédominante et ressources fourragères ligneuses présentes",
+      "production": "meadow"
+    },
+    {
+      "code": "SPL",
+      "cap_label": "Surface pastorale - ressources fourragères ligneuses prédominantes",
+      "production": "meadow"
+    },
+    {
+      "code": "BOP",
+      "cap_label": "Bois pâturé (prairie herbacée sous couvet d'arbres)",
+      "production": "meadow"
+    },
+    {
+      "code": "CAE",
+      "cap_label": "Châtaigneraie entretenue par des porcins ou des petits ruminants",
+      "production": "chesnut"
+    },
+    {
+      "code": "CEE",
+      "cap_label": "Chênaie entretenue par des porcins ou des petits ruminants",
+      "production": "oak"
+    },
+    {
+      "code": "ROS",
+      "cap_label": "Roselière",
+      "production": "meadow"
+    }
+  ],
+  "low_number_animals": [
+    "bos_taurus_armoricaine",
+    "bos_taurus_bazadaise",
+    "bos_taurus_bearnaise",
+    "bos_taurus_bleu_du_nord",
+    "bos_taurus_raco_di_biou",
+    "bos_taurus_bretonne_pie_noire",
+    "bos_taurus_bordelaise",
+    "bos_taurus_casta",
+    "bos_taurus_corse",
+    "bos_taurus_creole_guadeloupe",
+    "bos_taurus_creole_martinique",
+    "bos_taurus_de_combat",
+    "bos_taurus_ferrandaise",
+    "bos_taurus_rouge_flamande",
+    "bos_taurus_froment_du_leon",
+    "bos_taurus_mirandaise",
+    "bos_taurus_lourdaise",
+    "bos_taurus_maraichine",
+    "bos_taurus_nantaise",
+    "bos_taurus_saosnoise",
+    "bos_taurus_villars_de_lans",
+    "bos_taurus_vosgienne",
+    "capra_hircus_creole",
+    "capra_hircus_des_fosses",
+    "capra_hircus_massif_central",
+    "capra_hircus_poitevine",
+    "capra_hircus_provencale",
+    "capra_hircus_pyreneenne",
+    "capra_hircus_lorraine",
+    "capra_hircus_pei",
+    "equus_asinus_black_berry",
+    "equus_asinus_bourbonnais",
+    "equus_asinus_cotentin",
+    "equus_asinus_normand",
+    "equus_asinus_poitou",
+    "equus_asinus_provence",
+    "equus_asinus_pyrenees",
+    "equus_caballus_ardennais",
+    "equus_caballus_auvergne",
+    "equus_caballus_auxois",
+    "equus_caballus_boulonnais",
+    "equus_caballus_breton",
+    "equus_caballus_camargue",
+    "equus_caballus_castillonnais",
+    "equus_caballus_cob_normand",
+    "equus_caballus_comtois",
+    "equus_caballus_corse",
+    "equus_caballus_landais",
+    "equus_caballus_merens",
+    "equus_caballus_north_trait",
+    "equus_caballus_percheron",
+    "equus_caballus_poitevin_mulassier",
+    "equus_caballus_pottok",
+    "ovis_avranchin",
+    "ovis_baregeoise",
+    "ovis_belle_ile",
+    "ovis_berrichon_indre",
+    "ovis_black_montain",
+    "ovis_blue_maine",
+    "ovis_boulonnais",
+    "ovis_brigasque",
+    "ovis_britain_landes",
+    "ovis_castillonnaise",
+    "ovis_caussenarde_garrigues",
+    "ovis_cotentin",
+    "ovis_hague_roussin",
+    "ovis_landaise",
+    "ovis_lourdaise",
+    "ovis_martinik",
+    "ovis_merinos_precoce",
+    "ovis_merinos_rambouillet",
+    "ovis_ouessant",
+    "ovis_raiole",
+    "ovis_red_roussillon",
+    "ovis_solognote",
+    "ovis_southdown_french",
+    "sus_scrofa_creole_de_guadeloupe",
+    "sus_scrofa_cul_noir_limousin",
+    "sus_scrofa_corse",
+    "sus_scrofa_pie_noir_du_pays_basque",
+    "sus_scrofa_porc_de_bayeux",
+    "sus_scrofa_porc_blanc_de_l_ouest",
+    "sus_scrofa_gascon"
+  ],
+  "ecological_interest_areas": [
+    {
+      "name": "fallow",
+      "codes": [
+        "J5M",
+        "J6S",
+        "J6P",
+        "JNO"
+      ],
+      "equivalent": 10000
+    },
+    {
+      "name": "borders_grass_strips_buffer_strips",
+      "codes": [
+        "BTA",
+        "BFS",
+        "BOR"
+      ],
+      "equivalent": 10000
+    },
+    {
+      "name": "intra_plot_agroforestry",
+      "codes": [
+      ],
+      "equivalent": 52500
+    },
+    {
+      "name": "aligned_trees_and_forest_edge",
+      "codes": [
+        "V2"
+      ],
+      "equivalent": 12
+    },
+    {
+      "name": "low wall_embankment_ditches_terraces",
+      "codes": [
+        "A4",
+        "A5"
+      ],
+      "equivalent": 10
+    },
+    {
+      "name": "isolated_trees",
+      "codes": [
+        "V1"
+      ],
+      "equivalent": 500
+    },
+    {
+      "name": "grove",
+      "codes": [
+        "V3"
+      ],
+      "equivalent": 23000
+    },
+    {
+      "name": "ponds_and_lavognes",
+      "codes": [
+        "A1"
+      ],
+      "equivalent": 100
+    },
+    {
+      "name": "ripisylve",
+      "codes": [
+      ],
+      "equivalent": 56.8
+    },
+    {
+      "name": "permanent_grassing_of_perennial_crops",
+      "codes": [
+      ],
+      "equivalent": 10000
+    },
+    {
+      "name": "permanent_meadows",
+      "codes": [
+      ],
+      "equivalent": 10000
+    },
+    {
+      "name": "peat_bogs",
+      "codes": [
+      ],
+      "equivalent": 10000
+    },
+    {
+      "name": "tree_hedges_under_5_meter",
+      "codes": [
+      ],
+      "equivalent": 32
+    },
+    {
+      "name": "tree_hedges_over_5_meter",
+      "codes": [
+      ],
+      "equivalent": 120
+    }
+  ]
+}
