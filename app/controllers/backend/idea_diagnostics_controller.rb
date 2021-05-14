@@ -26,7 +26,7 @@ module Backend
       t.column :code, url: true
       t.column :updater
       t.column :state
-      t.column :started_on
+      t.column :created_at
     end
 
     def index
