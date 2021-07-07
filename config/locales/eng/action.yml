@@ -8,11 +8,12 @@ eng:
       new: "New IDEA diagnostic"
       index: "IDEA diagnostics "
       show: "IDEA diagnostic : %{code}"
+      edit: "Edit Durability diagnostic %{code}"
   labels:
-    durability: 'Durability'
-    diagnostic: "IDEA diagnostic "
-    new_diagnostic: "New IDEA diagnostic"
-    new_diagnostic_name: "New IDEA diagnostic %{name}"
+    auditor: 'Auditor'
+    auditor_name: "Auditor name"
     code: "Code"
-    idea_auditor: "Auditor"
+    durability: 'Durability'
+    idea_diagnostic: "IDEA diagnostic"
     idea_doing: "In progress"
+    notify_rotations: "Before starting your IDEA dignostic, ensure that all your rotations have been entered correctly (including agroforestry)."

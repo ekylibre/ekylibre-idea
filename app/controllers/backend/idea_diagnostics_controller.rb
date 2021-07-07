@@ -18,24 +18,30 @@
 module Backend
   class IdeaDiagnosticsController < Backend::BaseController
     manage_restfully
+    before_action :notify_rotations, only: :new
 
     unroll
 
     list(order: { name: :desc }) do |t|
+      t.action :edit
+      t.action :destroy
       t.column :name, url: true
       t.column :code, url: true
-      t.column :updater
+      t.column :auditor, label: :auditor
       t.column :state, label_method: 'state.tl'
       t.column :created_at
+      t.column :stopped_at
     end
 
     def index
-      @label = if IdeaDiagnostic.find_by(campaign_id: current_campaign.id).present?
-                 :new_diagnostic.tl
-               else
-                 :new_diagnostic_name.tl(name: current_campaign.name)
-               end
+      @label = :new_diagnostic.tl
     end
+
+    private
+
+      def notify_rotations
+        notify_warning(:notify_rotations.tl)
+      end
 
   end
 end

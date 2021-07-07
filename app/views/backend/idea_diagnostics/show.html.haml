@@ -1,5 +1,6 @@
 - main_toolbar do |t|
   = t.edit resource
+  = t.destroy resource
 = main_informations do
   = infos do
     .med-info
@@ -9,5 +10,5 @@
       %span.title= :campaign.tl
       %span.value= resource.campaign.name
     .med-info.important
-      %span.title= :idea_auditor.tl
-      %span.value= resource.updater.name
+      %span.title= :auditor.tl
+      %span.value= resource.auditor&.name

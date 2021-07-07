@@ -8,11 +8,13 @@ fra:
       new: "Nouveau diagnostic IDEA"
       index: "Diagnostics IDEA"
       show: "Diagnostic IDEA : %{code}"
+      edit: "Modifier le diagnostic de durabilité %{code}"
   labels:
-    durability: 'Durabilité'
-    diagnostic: "Diagnostic IDEA"
-    new_diagnostic: "Créer diagnostic IDEA"
-    new_diagnostic_name: "Créer diagnostic IDEA %{name}"
+    auditor: 'Auditeur'
+    auditor_name: "Nom de l'auditeur"
     code: "Code"
-    idea_auditor: "Auditeur"
+    durability: 'Durabilité'
+    idea_diagnostic: "Diagnostic IDEA"
     idea_doing: "En cours"
+    new_diagnostic: "Créer un diagnostic IDEA"
+    notify_rotations: "Avant de débuter votre diagnostic IDEA, vérifier que votre assolement a été correctement saisi (y compris l'agroforesterie)."
