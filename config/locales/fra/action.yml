@@ -7,13 +7,17 @@ fra:
     backend/idea_diagnostics:
       new: "Nouveau diagnostic IDEA"
       index: "Diagnostics IDEA"
-      show: "Diagnostic IDEA : %{code}"
+      show: "Diagnostic IDEA : %{name}"
       edit: "Modifier le diagnostic de durabilité %{code}"
+  idea:
+    gardening_type: 'Parmi vos activités de maraîchage suivantes, lesquelles sont des productions industrielles de légumes de plein champ ?=multiple_choices'
+    confirm_sth: 'Vous avez %{sth} hectares de surfaces toujours en herbe. Confirmez-vous cette valeur ?'
   labels:
     auditor: 'Auditeur'
     auditor_name: "Nom de l'auditeur"
     code: "Code"
     durability: 'Durabilité'
+    functional_diversity: "Diversité fonctionnelle"
     idea_diagnostic: "Diagnostic IDEA"
     idea_doing: "En cours"
     new_diagnostic: "Créer un diagnostic IDEA"

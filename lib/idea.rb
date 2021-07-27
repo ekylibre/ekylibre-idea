@@ -3,6 +3,9 @@
 require 'idea/engine'
 require 'idea/version'
 require 'idea/ext_navigation'
+require 'idea/indicators'
+require 'idea/components/base'
+require 'idea/components/a1'
 
 # Analytics on farm performance towards durability
 module Idea
@@ -11,6 +14,12 @@ module Idea
   def self.transcodings
     transcoding_path = File.join(File.dirname(__dir__), 'config', 'transcodings.json')
     JSON.parse(File.read(transcoding_path), object_class: OpenStruct)
+  end
+
+  def self.component_treshold(component)
+    {
+      functional_diversity: 20
+    }[component]
   end
 
   # @returns [Array] all grasslands pac codes
