@@ -15,5 +15,21 @@ module Idea
       app.config.x.restfully_manageable.view_paths << Idea::Engine.root.join('app', 'views')
     end
 
+    initializer :hack_idea_javascript do
+      tmp_file = Rails.root.join('tmp', 'plugins', 'javascript-addons', 'plugins.js.coffee')
+      tmp_file.open('a') do |f|
+        import = '#= require duke_integration'
+        f.puts(import) unless tmp_file.open('r').read.include?(import)
+      end
+    end
+
+    initializer :hack_idea_stylesheets do
+      tmp_file = Rails.root.join('tmp', 'plugins', 'theme-addons', 'themes', 'tekyla', 'plugins.scss')
+      tmp_file.open('a') do |f|
+        import = '@import "idea/main.scss";'
+        f.puts(import) unless tmp_file.open('r').read.include?(import)
+      end
+    end
+
   end
 end

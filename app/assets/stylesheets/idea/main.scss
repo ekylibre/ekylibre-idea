@@ -1,0 +1,22 @@
+.idea-borders{
+  border-style: none;
+  &.idea-action-col{
+    background: lightgray;
+    padding: 0px; 
+    text-align: center;
+  }
+  &.idea-diag-progress{
+    background-color: lightgray;
+    &.prog-bar{
+      background-clip: content-box;
+      padding: 0px 5px;
+    }
+  }
+}
+
+table tbody tr:hover td.idea-borders.idea-action-col {
+  background-color: lightgray;
+}
+table tbody tr:hover td.idea.borders.idea-diag-progress {
+  background-color: lightgray;
+}

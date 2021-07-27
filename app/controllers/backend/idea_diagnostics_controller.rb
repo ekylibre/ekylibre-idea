@@ -37,7 +37,31 @@ module Backend
       @label = :new_diagnostic.tl
     end
 
+    def create
+      @idea_diagnostic = resource_model.new(permitted_params)
+      if save_and_redirect(
+        @idea_diagnostic,
+        url: (params[:create_and_continue] ? { action: :new, continue: true } : (params[:redirect] || { action: :show, id: 'id'.c })),
+        notify: ((params[:create_and_continue] || params[:redirect]) ? :record_x_created : false),
+        identifier: :name
+      )
+        DiagnosticInstigator.new(@idea_diagnostic).instigate
+        return
+      end
+      render(locals: { cancel_url: { action: :index }, with_continue: false })
+    end
+
+    def reset_indicator
+      klaas = "Idea::Components::#{params[:indicator]}".constantize.new(diagnostic_id: params[:diagnostic_id])
+      klaas.reset_indicator
+      IdeaAutofillJob.perform_later(params[:diagnostic_id], indicator: params[:indicator])
+    end
+
     private
+
+      def permitted_params
+        params.require(:idea_diagnostic).permit!
+      end
 
       def notify_rotations
         notify_warning(:notify_rotations.tl)

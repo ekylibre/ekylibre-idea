@@ -1,5 +1,4 @@
 = field_set do
   = f.input :name, required: false
   = f.referenced_association :auditor, label: :auditor_name.tl, require: true
-  = f.referenced_association :campaign, required: true, disabled: f.object.errors.none? && IdeaDiagnostic.find_by(campaign: f.object.campaign).present?  
-
+  = f.referenced_association :campaign, required: true, disabled: f.object.errors.none? && IdeaDiagnostic.find_by(campaign: f.object.campaign).present?

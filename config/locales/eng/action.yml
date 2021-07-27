@@ -6,7 +6,7 @@ eng:
       index: "IDEA results"
     backend/idea_diagnostics:
       new: "New IDEA diagnostic"
-      index: "IDEA diagnostics "
+      index: "IDEA diagnostics"
       show: "IDEA diagnostic : %{code}"
       edit: "Edit Durability diagnostic %{code}"
   labels:
@@ -14,6 +14,8 @@ eng:
     auditor_name: "Auditor name"
     code: "Code"
     durability: 'Durability'
+    functional_diversity: "Functional diversity"
     idea_diagnostic: "IDEA diagnostic"
     idea_doing: "In progress"
+    new_diagnostic: "Create a Idea Diagnostic"
     notify_rotations: "Before starting your IDEA dignostic, ensure that all your rotations have been entered correctly (including agroforestry)."
