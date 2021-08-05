@@ -20,5 +20,7 @@ fra:
     functional_diversity: "Diversité fonctionnelle"
     idea_diagnostic: "Diagnostic IDEA"
     idea_doing: "En cours"
+    idea_record_created: "Le diagnostic IDEA a bien été créé"
+    idea_record_updated: "Le diagnostic IDEA a bien été mis à jour"
     new_diagnostic: "Créer un diagnostic IDEA"
     notify_rotations: "Avant de débuter votre diagnostic IDEA, vérifier que votre assolement a été correctement saisi (y compris l'agroforesterie)."

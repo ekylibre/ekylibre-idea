@@ -42,7 +42,7 @@ module Backend
       if save_and_redirect(
         @idea_diagnostic,
         url: (params[:create_and_continue] ? { action: :new, continue: true } : (params[:redirect] || { action: :show, id: 'id'.c })),
-        notify: ((params[:create_and_continue] || params[:redirect]) ? :record_x_created : false),
+        notify: :idea_record_created.tl,
         identifier: :name
       )
         DiagnosticInstigator.new(@idea_diagnostic).instigate
@@ -55,6 +55,17 @@ module Backend
       klaas = "Idea::Components::#{params[:indicator]}".constantize.new(diagnostic_id: params[:diagnostic_id])
       klaas.reset_indicator
       IdeaAutofillJob.perform_later(params[:diagnostic_id], indicator: params[:indicator])
+    end
+
+    def update
+      return unless @idea_diagnostic = find_and_check(:idea_diagnostic)
+
+      t3e(@idea_diagnostic.attributes)
+      @idea_diagnostic.attributes = permitted_params
+      return if save_and_redirect(@idea_diagnostic, url: params[:redirect] || { action: :show, id: 'id'.c },
+notify: :idea_record_updated.tl, identifier: :name)
+
+      render(locals: { cancel_url: { action: :index }, with_continue: false })
     end
 
     private
