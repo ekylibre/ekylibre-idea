@@ -17,5 +17,7 @@ eng:
     functional_diversity: "Functional diversity"
     idea_diagnostic: "IDEA diagnostic"
     idea_doing: "In progress"
+    idea_record_created: "The Idea diagnostic has been created"
+    idea_record_updated: "The Idea diagnostic has been updated"
     new_diagnostic: "Create a Idea Diagnostic"
     notify_rotations: "Before starting your IDEA dignostic, ensure that all your rotations have been entered correctly (including agroforestry)."
