@@ -11,7 +11,14 @@ fra:
       edit: "Modifier le diagnostic de durabilité %{code}"
   idea:
     gardening_type: 'Parmi vos activités de maraîchage suivantes, lesquelles sont des productions industrielles de légumes de plein champ ?=multiple_choices'
-    confirm_sth: 'Vous avez %{sth} hectares de surfaces toujours en herbe. Confirmez-vous cette valeur ?'
+    confirm_sth_1: "Vous avez %{sth} hectares de surfaces toujours en herbe."
+    confirm_sth_2: "Confirmez-vous cette valeur ?"
+    confirm_sth_3: "La surface toujours en herbe correspond à la surface productive toujours en herbe (pâturée ou fauchée) d’au moins 10 ans et comprend par exemple, les prairies ou les alpages"
+    intra_parcel_mix_1: "Selon vos données saisies depuis le module Production, votre espèce principale en surface parmi vos activités de grandes cultures, cultures fourragères et industrielles est<b> %{variety} </b>.<br>Les questions qui suivent concernent cette espèce."
+    intra_parcel_mix_2: "Pour cette espèce principale, cultivez-vous un mélange variétal intra-parcellaire ?"
+    arboricultural_intra_parcel_mix_1: "Selon vos données saisies depuis le module Production, votre espèce principale en surface parmi vos activités arboricoles est<b> %{variety} </b><br>Les questions qui suivent concernent cette espèce."
+    main_ugb_animal_1: "Selon vos données saisies depuis le module Production, votre espèce animale principale en UGB est<b> %{variety} </b><br>Les questions qui suivent concernent cette espèce."
+    main_ugb_animal_2: "Pour cette espèce, combien avez-vous de mères croisées dans votre cheptel ?"
   labels:
     auditor: 'Auditeur'
     auditor_name: "Nom de l'auditeur"

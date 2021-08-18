@@ -87,7 +87,7 @@ module Idea
         # TODO: do it correctly
         begin
           count = @campaign.activities.distinct.pluck(:cultivation_variety).uniq.select do |var|
-            sheltered_garning_varieties.include?(var.to_sym)
+            Onoma::CropSet.find('sheltered_gardening_idea').varieties.include?(var.to_sym)
           end.count
         rescue
           0
@@ -104,7 +104,7 @@ module Idea
       def a1_11
         # TODO: do it correctly
         begin
-          @campaign.activities.select{|act| idea_varieties.include? act.cultivation_variety.to_sym}.map do |act|
+          @campaign.activities.select{|act| idea_varieties.include? act.cultivation_variety&.to_sym}.map do |act|
             act.net_surface_area(@campaign).to_d
           end.sum.to_i
         rescue
@@ -116,7 +116,7 @@ module Idea
       def a1_12
         # TODO: do it correctly
         # to_reject = industrial_gardening.split('|')
-        # Activity.of_compaign(@campaign).select{|act| sheltered_garning_varieties.include? act.cultivation_variety.to_sym}
+        # Activity.of_compaign(@campaign).select{|act| sheltered_garning_varieties.include? act.cultivation_variety&.to_sym}
         #                                       .reject{|act| to_reject.include? act.id}
         #                                      .map{|act| act.net_surface_area(@campaign).to_d}
         #                                       .sum
@@ -137,28 +137,14 @@ module Idea
           dominant_sth? || (autofilled?('a1') && computable_gardening? && computable_idea_cropsets? && !item('A1_10').value.nil?)
         end
 
-        # Do we have any gardening on this farm for this campaign ?
-        def gardening?
-          Activity.of_campaign(@campaign).any? do |act|
-            sheltered_gardening_varieties.include? act.cultivation_variety.to_sym
-          end
-        end
-
         # Is everything gardening related filled ?
         def computable_gardening?
-          (gardening? && !item('A1_8').value.nil? && !item('A1_1').value.nil?) || !gardening?
-        end
-
-        #  Do we have any idea_crop on this farm for this campaign ?
-        def idea_cropset?
-          Activity.of_campaign(@campaign).any? do |act|
-            idea_varieties.include? act.cultivation_variety.to_sym
-          end
+          !gardening? || (!item('A1_8').value.nil? && !item('A1_1').value.nil?)
         end
 
         # Is everything idea_cropsets related filled ?
         def computable_idea_cropsets?
-          (idea_cropset? && !item('A1_3').value.nil?) || !idea_cropset?
+          !idea_cropset? || !item('A1_3').value.nil?
         end
 
         # Is the Sth superior than 90% of the rest of the
@@ -168,11 +154,6 @@ module Idea
           else
             false
           end
-        end
-
-        def sth
-          # TODO: do it correctly
-          1.2
         end
 
     end
