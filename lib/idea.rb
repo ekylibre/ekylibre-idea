@@ -6,6 +6,7 @@ require 'idea/ext_navigation'
 require 'idea/indicators'
 require 'idea/components/base'
 require 'idea/components/a1'
+require 'idea/components/a2'
 
 # Analytics on farm performance towards durability
 module Idea

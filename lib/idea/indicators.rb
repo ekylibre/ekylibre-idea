@@ -40,7 +40,7 @@ module Idea
       end
 
       def components
-        %w[A1]
+        %w[A1 A2]
       end
     end
 

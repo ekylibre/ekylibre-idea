@@ -1,6 +1,7 @@
 module Idea
   module Components
     class Base
+      include Duke::Utils::BaseDuke
 
       # @params [Integer] diagnostic_id : IdeaDiagnostic id
       #  @params [String] indicator : component idea_id
@@ -48,9 +49,37 @@ module Idea
           end.flatten
         end
 
-        # @returns [Array]: list of all sheltered gardening varieties
-        def sheltered_gardening_varieties
-          Onoma::CropSet.find('sheltered_gardening_idea').varieties
+        # Do we have any gardening on this farm for this campaign ?
+        def gardening?
+          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('sheltered_gardening_idea').varieties).any?
+        end
+
+        #  Do we have any idea_crop on this farm for this campaign ?
+        def idea_cropset?
+          Activity.of_campaign(@campaign).where(cultivation_variety: idea_varieties).any?
+        end
+
+        def field_industrial_fodder_crops?
+          Activity.of_campaign(@campaign).where(
+            cultivation_variety: Onoma::CropSet.find('field_industrial_fodder_crops_idea').varieties
+          ).any?
+        end
+
+        def animals_idea?
+          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('animals_idea').varieties).any?
+        end
+
+        def vineyard_idea?
+          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('vineyard_idea').varieties).any?
+        end
+
+        def arboricultural_idea?
+          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('arboricultural_idea').varieties).any?
+        end
+
+        def sth
+          # TODO: do it correctly
+          1.2
         end
 
     end
