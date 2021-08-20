@@ -14,7 +14,10 @@ module Idea
         if item('A1_10').value.nil?
           Duke::DukeResponse.new(
             redirect: 'A1_10',
-            sentence: I18n.t('idea.confirm_sth', sth: sth),
+            sentence: duke_information_tag(I18n.t('idea.confirm_sth_1',
+                                                  sth: sth)) + I18n.t('idea.confirm_sth_2') + duke_information_tag(
+                                                    I18n.t('idea.confirm_sth_3')
+                                                  ),
             parsed: @idea_diagnostic.id,
             options: sth
           )
