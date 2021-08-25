@@ -1,19 +1,19 @@
 eng:
   actions:
     backend/dashboards:
-      idea: "Durability"
+      idea: "Sustainability"
     backend/idea_diagnostic_results:
       index: "IDEA results"
     backend/idea_diagnostics:
       new: "New IDEA diagnostic"
       index: "IDEA diagnostics"
       show: "IDEA diagnostic : %{code}"
-      edit: "Edit Durability diagnostic %{code}"
+      edit: "Edit sustainability diagnostic %{code}"
   labels:
     auditor: 'Auditor'
     auditor_name: "Auditor name"
     code: "Code"
-    durability: 'Durability'
+    durability: 'Sustainability'
     functional_diversity: "Functional diversity"
     idea_diagnostic: "IDEA diagnostic"
     idea_doing: "In progress"
