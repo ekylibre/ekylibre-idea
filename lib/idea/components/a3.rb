@@ -10,7 +10,7 @@ module Idea
       # What should Duke ask to the user for this component
       # @returns [DukeResponse] : response
       def duke_redirect
-        return Duke::DukeResponse.new if @idea_diagnostic.nil? || dominant_sth?
+        return Duke::DukeResponse.new if @idea_diagnostic.nil?
         
         Duke::DukeResponse.new
       end
@@ -24,6 +24,90 @@ module Idea
       def reset_indicator
         @idea_diagnostic_item.update!(value: nil)
         reset_item_values(INDICATOR)
+      end
+
+      # A3 calculator value
+      def a3_1
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_2
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_3
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_4
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_5
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_6
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_7
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_8
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_9
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_10
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_11
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_12
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_13
+        # TODO: do it correctly
+        1
+      end
+
+      # A3 calculator value
+      def a3_14
+        # TODO: do it correctly
+        1
       end
 
       private

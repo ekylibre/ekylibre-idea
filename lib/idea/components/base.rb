@@ -51,39 +51,47 @@ module Idea
 
         # Do we have any gardening on this farm for this campaign ?
         def gardening?
-          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('sheltered_gardening_idea').varieties).any?
+          Activity.of_campaign(@campaign).of_cultivation_varieties(Onoma::CropSet.find('sheltered_gardening_idea').varieties).any?
         end
 
         #  Do we have any idea_crop on this farm for this campaign ?
         def idea_cropset?
-          Activity.of_campaign(@campaign).where(cultivation_variety: idea_varieties).any?
+          Activity.of_campaign(@campaign).of_cultivation_varieties(idea_varieties).any?
         end
 
         def field_industrial_fodder_crops?
-          Activity.of_campaign(@campaign).where(
-            cultivation_variety: Onoma::CropSet.find('field_industrial_fodder_crops_idea').varieties
-          ).any?
+          Activity.of_campaign(@campaign).of_cultivation_varieties(Onoma::CropSet.find('field_industrial_fodder_crops_idea').varieties).any?
         end
 
         def animals_idea?
-          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('animals_idea').varieties).any?
+          Activity.of_campaign(@campaign).of_cultivation_varieties(Onoma::CropSet.find('animals_idea').varieties).any?
         end
 
         def vineyard_idea?
-          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('vineyard_idea').varieties).any?
+          Activity.of_campaign(@campaign).of_cultivation_varieties(Onoma::CropSet.find('vineyard_idea').varieties).any?
         end
 
         def arboricultural_idea?
-          Activity.of_campaign(@campaign).where(cultivation_variety: Onoma::CropSet.find('arboricultural_idea').varieties).any?
+          Activity.of_campaign(@campaign).of_cultivation_varieties(Onoma::CropSet.find('arboricultural_idea').varieties).any?
         end
 
         def sth
-          # TODO: do it correctly
-          1.2
+          # Look for all meadow reference name for campaign in activity productions
+          aps = ActivityProduction.of_campaign(@campaign).where(reference_name: %w[meadow])
+          if aps.present?
+            aps.pluck(:size_value).compact.sum.round(2).to_f
+          else
+            0.0
+          end
         end
 
         def fallow_area
-          15.0
+          aps = ActivityProduction.of_campaign(@campaign).where(usage: %w[fallow_land], support_nature: 'cultivation')
+          if aps.present?
+            aps.pluck(:size_value).compact.sum.round(2).to_f
+          else
+            0.0
+          end
         end
 
     end

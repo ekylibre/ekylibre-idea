@@ -209,7 +209,7 @@ module Idea
 
         def item_3_score
           score = item('A2_22').value ? 1 : 0
-          score += 1  if item('A2_18').value
+          score += 1 if item('A2_18').value
           score += 1 if item('A2_21').value
           [score, 2].min
         end
