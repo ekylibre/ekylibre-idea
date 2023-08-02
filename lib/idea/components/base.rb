@@ -82,6 +82,10 @@ module Idea
           1.2
         end
 
+        def fallow_area
+          15.0
+        end
+
     end
   end
 end

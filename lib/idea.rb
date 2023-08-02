@@ -7,6 +7,9 @@ require 'idea/indicators'
 require 'idea/components/base'
 require 'idea/components/a1'
 require 'idea/components/a2'
+require 'idea/components/a3'
+require 'idea/components/a4'
+require 'idea/components/a5'
 
 # Analytics on farm performance towards durability
 module Idea

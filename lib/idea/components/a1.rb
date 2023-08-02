@@ -1,9 +1,10 @@
 module Idea
   module Components
     class A1 < Base
+      INDICATOR = 'A1'
 
       def initialize(diagnostic_id: nil)
-        super(diagnostic_id: diagnostic_id, idea_name: 'A1')
+        super(diagnostic_id: diagnostic_id, idea_name: INDICATOR)
       end
 
       # What should Duke ask to the user for this component
@@ -49,7 +50,7 @@ module Idea
       #  Resets IdeaDiagnosticItem value & IdeaDiagnosticItemValues values
       def reset_indicator
         @idea_diagnostic_item.update!(value: nil)
-        reset_item_values('A1')
+        reset_item_values(INDICATOR)
       end
 
       #  A1_2 calculator value

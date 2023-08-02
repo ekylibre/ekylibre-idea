@@ -10,6 +10,8 @@ fra:
       show: "Diagnostic IDEA : %{name}"
       edit: "Modifier le diagnostic de durabilité %{code}"
   idea:
+    confirm_fallow_land_1: "D’après votre télédéclaration PAC et les données IGN vous possédez %{fallow_area} hectares de jachère."
+    confirm_fallow_land_2: "Confirmez-vous cette valeur ?"
     gardening_type: 'Parmi vos activités de maraîchage suivantes, lesquelles sont des productions industrielles de légumes de plein champ ?=multiple_choices'
     confirm_sth_1: "Vous avez %{sth} hectares de surfaces toujours en herbe."
     confirm_sth_2: "Confirmez-vous cette valeur ?"
