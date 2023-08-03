@@ -75,6 +75,10 @@ module Idea
           Activity.of_campaign(@campaign).of_cultivation_varieties(Onoma::CropSet.find('arboricultural_idea').varieties).any?
         end
 
+        def sau(unit = :hectare)
+          @campaign.net_surface_area.in(unit).to_f.round(2)
+        end
+
         def sth
           # Look for all meadow reference name for campaign in activity productions
           aps = ActivityProduction.of_campaign(@campaign).where(reference_name: %w[meadow])
@@ -89,6 +93,77 @@ module Idea
           aps = ActivityProduction.of_campaign(@campaign).where(usage: %w[fallow_land], support_nature: 'cultivation')
           if aps.present?
             aps.pluck(:size_value).compact.sum.round(2).to_f
+          else
+            0.0
+          end
+        end
+
+        def grass_borders(unit = :hectare)
+          a_grass_borders = CapLandParcel.of_campaign(@campaign).where(main_crop_code: %w[BFS BOR BTA])
+          if a_grass_borders.present?
+            total = a_grass_borders.geom_union(:shape).area
+            total.in_square_meter.convert(unit).to_f.round(4)
+          else
+            0.0
+          end
+        end
+
+        def agroforest_cap_land_parcel
+          # TODO
+          nil
+        end
+
+        def edges_total_length
+          buffer = 0.7
+          geometries = CultivableZone.all.map{ |cz| cz.shape }.compact.uniq
+          edges = RegisteredAreaItem.of_nature(:edge).buffer_intersecting(buffer, *geometries)
+          if edges.present?
+            total = 0.0
+            edges.each do |edge|
+              total += edge.geometry.to_rgeo.length
+            end
+            total.round(2).in_meter.to_f
+          else
+            0.0
+          end
+        end
+
+        def aligned_trees_perimeter
+          p_trees = CapNeutralArea.of_campaign(@campaign).where(nature: %w[V2])
+          if p_trees.present?
+            p_trees.perimeters(:shape).to_f
+          else
+            0.0
+          end
+        end
+
+        def settlements_perimeter
+          p_settlements = CapNeutralArea.of_campaign(@campaign).where(nature: %w[A4 A5 A7])
+          if p_settlements.present?
+            p_settlements.perimeters(:shape).to_f
+          else
+            0.0
+          end
+        end
+
+        def alone_trees_count
+          CapNeutralArea.of_campaign(@campaign).where(nature: %w[V1]).count
+        end
+
+        def boskets_area(unit = :hectare)
+          a_boskets = CapNeutralArea.of_campaign(@campaign).where(nature: %w[V3])
+          if a_boskets.present?
+            total = a_boskets.geom_union(:shape).area
+            total.in_square_meter.convert(unit).to_f.round(4)
+          else
+            0.0
+          end
+        end
+
+        def ponds_perimeter
+          p_ponds = CapNeutralArea.of_campaign(@campaign).where(nature: %w[A1])
+          if p_ponds.present?
+            p_ponds.perimeters(:shape).to_f
           else
             0.0
           end

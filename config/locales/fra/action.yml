@@ -10,6 +10,8 @@ fra:
       show: "Diagnostic IDEA : %{name}"
       edit: "Modifier le diagnostic de durabilité %{code}"
   idea:
+    inform_edges_total_length: "D’après votre télédéclaration PAC %{year} et les données IGN, vous possédez %{edges_total_length} mètres de haies buissonnantes et arborescentes."
+    ask_bush_edge_lenght: "Combien de mètres représentent vos haies buisson nantes (moins de 5 m de haut) ?"
     confirm_fallow_land_1: "D’après votre télédéclaration PAC et les données IGN vous possédez %{fallow_area} hectares de jachère."
     confirm_fallow_land_2: "Confirmez-vous cette valeur ?"
     gardening_type: 'Parmi vos activités de maraîchage suivantes, lesquelles sont des productions industrielles de légumes de plein champ ?=multiple_choices'

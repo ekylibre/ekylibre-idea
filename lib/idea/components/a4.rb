@@ -15,10 +15,32 @@ module Idea
 
         if item('A4_10').value.nil?
           Duke::DukeResponse.new(
-            redirect: 'A4_10',
-            sentence: duke_information_tag(I18n.t('idea.confirm_fallow_land_1', fallow_area: fallow_area)) + I18n.t('idea.confirm_fallow_land_2'),
-            parsed: @idea_diagnostic.id,
-            options: fallow_area
+          redirect: 'A4_10',
+          sentence: duke_information_tag(I18n.t('idea.confirm_fallow_land_1', fallow_area: fallow_area)) + I18n.t('idea.confirm_fallow_land_2'),
+          parsed: @idea_diagnostic.id,
+          options: fallow_area
+          )
+        elsif item('A4_16').value.nil?
+          Duke::DukeResponse.new(
+            redirect: 'A4_16',
+            parsed: @idea_diagnostic.id
+          )
+        elsif item('A4_20').value.nil?
+          Duke::DukeResponse.new(
+            redirect: 'A4_20',
+            parsed: @idea_diagnostic.id
+          )
+        elsif item('A4_21').value.nil?
+          Duke::DukeResponse.new(
+            redirect: 'A4_21',
+            parsed: @idea_diagnostic.id
+          )
+        elsif item('A4_17').value.nil?
+          Duke::DukeResponse.new(
+          redirect: 'A4_17',
+          sentence: duke_information_tag(I18n.t('idea.inform_edges_total_length', year: @campaign.harvest_year.to_s, edges_total_length: edges_total_length)) + I18n.t('idea.ask_bush_edge_lenght'),
+          parsed: @idea_diagnostic.id,
+          options: edges_total_length
           )
         elsif item('A4_9').value.nil? && gardening?
           Duke::DukeResponse.new(
@@ -187,92 +209,61 @@ module Idea
 
       # A4 calculator value
       def a4_11
+        grass_borders
+      end
+
+      # A4 calculator value
+      def a4_12
         # TODO: do it correctly
         1
       end
 
-       # A4 calculator value
-       def a4_12
+      # A4 calculator value
+      def a4_13
         # TODO: do it correctly
         1
       end
 
-       # A4 calculator value
-       def a4_13
+      # A4 calculator value
+      def a4_14
+        alone_trees_count
+      end
+
+      # A4 calculator value
+      def a4_15
+        aligned_trees_perimeter
+      end
+
+      # A4 unused because build on difference between total_edge_length and A4_17
+      def a4_18
+        1
+      end
+
+      # A4 calculator value
+      def a4_19
+        boskets_area
+      end
+
+      # A4 calculator value
+      def a4_22
+        settlements_perimeter
+      end
+
+      # A4 calculator value
+      def a4_23
+        ponds_perimeter
+      end
+
+      # A4_24 calculator value is build during A1_10
+
+      # A4 calculator value
+      def a4_25
         # TODO: do it correctly
         1
       end
 
-       # A4 calculator value
-       def a4_14
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_15
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_16
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_17
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_18
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_19
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_20
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_21
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_22
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_23
-        # TODO: do it correctly
-        1
-      end
-
-       # A4_24 calculator value is build during A1_10
-
-       # A4 calculator value
-       def a4_25
-        # TODO: do it correctly
-        1
-      end
-
-       # A4 calculator value
-       def a4_26
+      # A4 calculator value
+      def a4_26
         # TODO: do it correctly
         1
       end
@@ -379,6 +370,76 @@ module Idea
           end
         end
 
+        # Item 2.1 / 2.2 / 2.3
+        def item_2_score
+          score = 0.0
+          ## Surface en herbe
+          # Jachère
+          score += fallow_area
+          # Bordures, bandes enherbées et bandes tampons
+          if item('A4_11').value.present?
+            grass_borders_sdb = item('A4_11').value
+            score += grass_borders_sdb
+          end
+          # sth
+          if item('A4_26').value.present?
+            sth_sdb = item('A4_26').value
+            score += sth_sdb
+          end
+          ## Arbres et haies
+          # Arbres isolées
+          if item('A4_14').value.present?
+            alone_tree_sdb = item('A4_14').value * 0.05
+            score += alone_tree_sdb
+          end
+          # Arbres alignés et lisière de forêts
+          if item('A4_15').value.present?
+            aligned_tree_sdb = (item('A4_15').value / 100.0) * 0.12
+            score += aligned_tree_sdb
+          end
+          # Ripisylve
+          if item('A4_16').value.present?
+            ripisylve_sdb = (item('A4_16').value / 100.0) * 0.568
+            score += ripisylve_sdb
+          end
+          # Haies buissonnantes
+          if item('A4_17').value.present?
+            # Haies buissonnantes (moins de 5 m de haut)
+            bush_under_5_m = item('A4_17').value
+            # Haies arborescentes (plus de 5 m de haut)
+            bush_up_to_5_m = edges_total_length - bush_under_5_m
+            bush_sdb = ( bush_under_5_m / 100.0 ) * 0.32 + ( bush_up_to_5_m / 100.0 ) * 1.2
+            score += bush_sdb
+          end
+          # Bosquets
+          if item('A4_19').value.present?
+            bosquet_sdb = item('A4_19').value * 2.3
+            score += bosquet_sdb
+          end
+          # Agroforesterie
+          if item('A4_20').value.present?
+            agroforest_sdb = item('A4_20').value * 5.25
+            score += agroforest_sdb
+          end
+          ## Divers
+          # Tourbieres
+          if item('A4_21').value.present?
+            peatland_sdb = item('A4_21').value * 1
+            score += peatland_sdb
+          end
+          # talus, murets, fossés et terrasses
+          if item('A4_22').value.present?
+            wall_sdb = item('A4_22').value * 0.001
+            score += wall_sdb
+          end
+          # mare et lavognes
+          if item('A4_23').value.present?
+            pond_sdb = item('A4_23').value * 0.01
+            score += pond_sdb
+          end
+          score
+        end
+
         # Item 1 Compute
         def item_1
           sum = 0.0
@@ -408,12 +469,23 @@ module Idea
 
         # Item 2 Compute
         def item_2
-          0.0
+          global_sdb = ((item_2_score / sau) * 100).round(2)
+          if global_sdb < 50.0
+            0
+          elsif global_sdb >= 50.0 && global_sdb < 60.0
+            1
+          elsif global_sdb >= 60.0 && global_sdb < 70.0
+            2
+          elsif global_sdb > 70.0
+            3
+          end
         end
 
         # Calculate IdeaDiagnosticItem global score
         def compute_score
-          item_1 + item_2
+          sum_score = item_1 + item_2
+          sum_score = 5.0 if sum_score > 5.0
+          sum_score.round.to_i
         end
 
         def computable?
