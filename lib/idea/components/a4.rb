@@ -20,6 +20,11 @@ module Idea
             parsed: @idea_diagnostic.id,
             options: fallow_area
           )
+        elsif item('A4_9').value.nil? && gardening?
+          Duke::DukeResponse.new(
+            redirect: 'A4_09',
+            parsed: @idea_diagnostic.id
+          )
         else
           Duke::DukeResponse.new
         end
@@ -181,12 +186,6 @@ module Idea
       end
 
       # A4 calculator value
-      def a4_9
-        # TODO: do it correctly
-        1
-      end
-
-      # A4 calculator value
       def a4_11
         # TODO: do it correctly
         1
@@ -344,19 +343,24 @@ module Idea
 
         # Item 1.4 : Maraichage
         def item_1_4_score
+          total = 0.0
           if gardening?
             sgic = (item('A4_5').value / item('A4_8').value).round(2) * 100 if item('A4_8').value > 0.0
             if sgic.present?
               if sgic == 0.0
-                2
+                total += 2.0
               elsif (sgic > 0.0 && sgic <= 30.0)
-                1
+                total += 1.0
               elsif (sgic > 30.0)
-                0
+                total += 0.0
               end
             else
               nil
             end
+            if item('A4_9').value.present? && item('A4_9').value == true
+              total += 1.0
+            end
+            total
           else
             RESCUE_VALUE
           end
