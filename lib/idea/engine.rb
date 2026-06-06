@@ -18,8 +18,10 @@ module Idea
     initializer :hack_idea_javascript do
       tmp_file = Rails.root.join('tmp', 'plugins', 'javascript-addons', 'plugins.js.coffee')
       tmp_file.open('a') do |f|
-        import = '#= require duke_integration'
-        f.puts(import) unless tmp_file.open('r').read.include?(import)
+        existing = tmp_file.open('r').read
+        ['#= require idea_wizard', '#= require idea_voice'].each do |import|
+          f.puts(import) unless existing.include?(import)
+        end
       end
     end
 

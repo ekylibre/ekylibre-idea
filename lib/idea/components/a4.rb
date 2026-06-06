@@ -8,47 +8,47 @@ module Idea
         super(diagnostic_id: diagnostic_id, idea_name: INDICATOR)
       end
 
-      # What should Duke ask to the user for this component
-      # @returns [DukeResponse] : response
-      def duke_redirect
-        return Duke::DukeResponse.new if @idea_diagnostic.nil?
+      # Next question the wizard should ask for this component.
+      # @returns [Idea::Question]
+      def next_question
+        return Idea::Question.terminal if @idea_diagnostic.nil?
 
         if item('A4_10').value.nil?
-          Duke::DukeResponse.new(
-          redirect: 'A4_10',
-          sentence: duke_information_tag(I18n.t('idea.confirm_fallow_land_1', fallow_area: fallow_area)) + I18n.t('idea.confirm_fallow_land_2'),
-          parsed: @idea_diagnostic.id,
-          options: fallow_area
+          Idea::Question.new(
+            next_indicator: 'A4_10',
+            sentence: idea_information_tag(I18n.t('idea.confirm_fallow_land_1', fallow_area: fallow_area)) + I18n.t('idea.confirm_fallow_land_2'),
+            prefilled_value: fallow_area,
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A4_16').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A4_16',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A4_16',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A4_20').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A4_20',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A4_20',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A4_21').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A4_21',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A4_21',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A4_17').value.nil?
-          Duke::DukeResponse.new(
-          redirect: 'A4_17',
-          sentence: duke_information_tag(I18n.t('idea.inform_edges_total_length', year: @campaign.harvest_year.to_s, edges_total_length: edges_total_length)) + I18n.t('idea.ask_bush_edge_lenght'),
-          parsed: @idea_diagnostic.id,
-          options: edges_total_length
+          Idea::Question.new(
+            next_indicator: 'A4_17',
+            sentence: idea_information_tag(I18n.t('idea.inform_edges_total_length', year: @campaign.harvest_year.to_s, edges_total_length: edges_total_length)) + I18n.t('idea.ask_bush_edge_lenght'),
+            prefilled_value: edges_total_length,
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A4_9').value.nil? && gardening?
-          Duke::DukeResponse.new(
-            redirect: 'A4_09',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A4_09',
+            diagnostic_id: @idea_diagnostic.id
           )
         else
-          Duke::DukeResponse.new
+          Idea::Question.terminal(diagnostic_id: @idea_diagnostic.id)
         end
       end
 

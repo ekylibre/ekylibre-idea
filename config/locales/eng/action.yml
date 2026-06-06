@@ -9,7 +9,13 @@ eng:
       index: "IDEA diagnostics"
       show: "IDEA diagnostic : %{code}"
       edit: "Edit sustainability diagnostic %{code}"
+  idea:
+    questions:
+      # English translations pending — fra/action.yml carries the canonical
+      # strings extracted from the former Duke Watson skill.
   labels:
+    answer: "Answer"
+    answer_indicator: "Answer indicator"
     auditor: 'Auditor'
     auditor_name: "Auditor name"
     code: "Code"
@@ -21,3 +27,5 @@ eng:
     idea_record_updated: "The Idea diagnostic has been updated"
     new_diagnostic: "Create a Idea Diagnostic"
     notify_rotations: "Before starting your IDEA dignostic, ensure that all your rotations have been entered correctly (including agroforestry)."
+    precomputed_value: "Precomputed value:"
+    voice_input: "Voice input"

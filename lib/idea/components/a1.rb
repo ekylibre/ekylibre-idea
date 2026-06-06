@@ -7,38 +7,38 @@ module Idea
         super(diagnostic_id: diagnostic_id, idea_name: INDICATOR)
       end
 
-      # What should Duke ask to the user for this component
-      # @returns [DukeResponse] : response
-      def duke_redirect
-        return Duke::DukeResponse.new if @idea_diagnostic.nil? || dominant_sth?
+      # Next question the wizard should ask for this component.
+      # @returns [Idea::Question]
+      def next_question
+        return Idea::Question.terminal if @idea_diagnostic.nil? || dominant_sth?
 
         if item('A1_10').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A1_10',
-            sentence: duke_information_tag(I18n.t('idea.confirm_sth_1',
-                                                  sth: sth)) + I18n.t('idea.confirm_sth_2') + duke_information_tag(
+          Idea::Question.new(
+            next_indicator: 'A1_10',
+            sentence: idea_information_tag(I18n.t('idea.confirm_sth_1',
+                                                  sth: sth)) + I18n.t('idea.confirm_sth_2') + idea_information_tag(
                                                     I18n.t('idea.confirm_sth_3')
                                                   ),
-            parsed: @idea_diagnostic.id,
-            options: sth
+            prefilled_value: sth,
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif gardening? && item('A1_1').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A1_01',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A1_01',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif idea_cropset? && item('A1_3').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A1_03',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A1_03',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif gardening? && item('A1_8').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A1_08',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A1_08',
+            diagnostic_id: @idea_diagnostic.id
           )
         else
-          Duke::DukeResponse.new
+          Idea::Question.terminal(diagnostic_id: @idea_diagnostic.id)
         end
       end
 
@@ -136,7 +136,7 @@ module Idea
           rand(2..4)
         end
 
-        # Do we have everything we need to calculate a global score (Duke + Autofilled)
+        # Do we have everything we need to calculate a global score (wizard + autofilled)
         def computable?
           dominant_sth? || (autofilled?('a1') && computable_gardening? && computable_idea_cropsets? && !item('A1_10').value.nil?)
         end

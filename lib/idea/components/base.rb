@@ -1,7 +1,7 @@
 module Idea
   module Components
     class Base
-      include Duke::Utils::BaseDuke
+      include Idea::SentenceHelpers
 
       # @params [Integer] diagnostic_id : IdeaDiagnostic id
       #  @params [String] indicator : component idea_id
@@ -18,6 +18,18 @@ module Idea
         # @return [IdeaDiagnosticItemValue]
         def item(idea_id)
           @idea_diagnostic_item.idea_diagnostic_item_values.find_by(name: idea_id)
+        end
+
+        # Same lookup but scoped to the whole diagnostic, not just the
+        # current component's item. Use when one indicator's
+        # next_question needs to read an item_value owned by another
+        # indicator (e.g. A2 checking whether A1_10 has been answered).
+        # @return [IdeaDiagnosticItemValue, nil]
+        def diagnostic_item_value(name)
+          IdeaDiagnosticItemValue
+            .joins(:idea_diagnostic_item)
+            .where(idea_diagnostic_items: { idea_diagnostic_id: @idea_diagnostic.id })
+            .find_by(name: name)
         end
 
         # @params [String] idea_id: component name

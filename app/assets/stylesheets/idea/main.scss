@@ -20,3 +20,85 @@ table tbody tr:hover td.idea-borders.idea-action-col {
 table tbody tr:hover td.idea.borders.idea-diag-progress {
   background-color: lightgray;
 }
+
+// Information banner emitted by Idea::SentenceHelpers#idea_information_tag
+// from the next_question payload.
+.idea-information {
+  background-color: #EEF0FB;
+  border-left: 3px solid #3340A4;
+  border-radius: 2px;
+  padding: 6px 10px;
+  margin: 4px 0;
+  font-style: italic;
+
+  .icon {
+    margin-right: 6px;
+  }
+}
+
+// Wizard modal — slots populated by app/assets/javascripts/idea_wizard.js.
+// `data-role` attributes are the contract between this CSS, the HAML
+// shell (_question_modal.html.haml) and the JS that drives the flow.
+.idea-wizard {
+  &__indicator {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #3340A4;
+  }
+
+  &__sentence {
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  &__prefilled {
+    background-color: #F4F6FC;
+    border: 1px solid #E0E4F2;
+    border-radius: 3px;
+    padding: 6px 10px;
+    margin: 8px 0;
+    font-size: 0.95em;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__prefilled-label {
+    color: #5A6480;
+    margin-right: 6px;
+  }
+
+  &__prefilled-value {
+    font-weight: bold;
+  }
+
+  &__input {
+    margin: 12px 0;
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+    }
+  }
+
+  &__voice {
+    margin: 8px 0;
+  }
+
+  &__mic {
+    &--recording {
+      background-color: #C63F3F;
+      color: white;
+      border-color: #C63F3F;
+    }
+  }
+
+  &__error {
+    &.hidden {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+-# Shell modal driven by app/assets/javascripts/idea_wizard.js (Phase 3.4).
+-# The HAML is intentionally static — every dynamic slot is reached by
+-# the JS through its `data-role` attribute. The wizard POSTs to
+-# backend_idea_diagnostic_answer_path and refreshes the slots in place.
+-#
+-# Mounted unconditionally at the bottom of show.html.haml; visibility
+-# is controlled by the standard Bootstrap modal show/hide lifecycle.
+
+= modal(id: 'idea-question-modal', title: :answer_indicator.tl, close_button: true, size: :medium) do
+  .modal-body
+    .idea-wizard{ data: { role: 'wizard' } }
+
+      .idea-wizard__indicator{ data: { role: 'indicator-title' } }
+        -# Filled by JS — e.g. "A1 — Diversité fonctionnelle"
+
+      .idea-wizard__sentence{ data: { role: 'sentence' } }
+        -# innerHTML set from Idea::Question#sentence (server-rendered HTML,
+        -# trusted). Empty when the question has no sentence.
+
+      .idea-wizard__prefilled.hidden{ data: { role: 'prefilled' } }
+        %span.idea-wizard__prefilled-label= :precomputed_value.tl
+        %span.idea-wizard__prefilled-value{ data: { role: 'prefilled-value' } }
+
+      .idea-wizard__input{ data: { role: 'input' } }
+        -# Replaced by JS with the right widget for the question's nature:
+        -#   string  → <textarea>
+        -#   integer → <input type="number" step="1">
+        -#   float   → <input type="number" step="any">
+        -#   boolean → two radio buttons (oui / non)
+
+      .idea-wizard__voice{ data: { role: 'voice' }, hidden: true }
+        %button.btn.btn-default.idea-wizard__mic{ type: 'button', data: { role: 'mic' }, 'aria-label' => :voice_input.tl }
+          %i.icon.icon-mic
+          %span.idea-wizard__mic-label= :voice_input.tl
+
+      .idea-wizard__error.alert.alert-danger.hidden{ data: { role: 'error' }, role: 'alert' }
+        -# Filled by JS with i18n'd message from the JSON error code
+
+  .modal-footer
+    = button_tag(:cancel.tl, type: 'button', class: 'btn btn-default', data: { role: 'cancel', dismiss: 'modal' })
+    = button_tag(:answer.tl, type: 'button', class: 'btn btn-primary', data: { role: 'submit' })

@@ -7,12 +7,14 @@ module Idea
         super(diagnostic_id: diagnostic_id, idea_name: INDICATOR)
       end
 
-      # What should Duke ask to the user for this component
-      # @returns [DukeResponse] : response
-      def duke_redirect
-        return Duke::DukeResponse.new if @idea_diagnostic.nil?
-        
-        Duke::DukeResponse.new
+      # Next question the wizard should ask for this component.
+      # A5 has no scripted questionnaire — always terminal. Score relies on
+      # autofill only.
+      # @returns [Idea::Question]
+      def next_question
+        return Idea::Question.terminal if @idea_diagnostic.nil?
+
+        Idea::Question.terminal(diagnostic_id: @idea_diagnostic.id)
       end
 
       # Check if score is calculable & updates it if so

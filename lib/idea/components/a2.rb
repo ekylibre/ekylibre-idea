@@ -7,90 +7,104 @@ module Idea
         super(diagnostic_id: diagnostic_id, idea_name: INDICATOR)
       end
 
-      # What should Duke ask to the user for this component
-      # @returns [DukeResponse] : response
-      def duke_redirect
-        return Duke::DukeResponse.new if @idea_diagnostic.nil?
+      # Next question the wizard should ask for this component.
+      # @returns [Idea::Question]
+      def next_question
+        return Idea::Question.terminal if @idea_diagnostic.nil?
 
         if item('A2_1').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_01',
-            parsed: @idea_diagnostic.id,
+          Idea::Question.new(
+            next_indicator: 'A2_01',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif idea_cropset? && item('A2_2').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_02',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_02',
+            diagnostic_id: @idea_diagnostic.id
           )
-        elsif item('A2_27').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A1_10',
-            sentence: duke_information_tag(I18n.t('idea.confirm_sth_1',
-                                                  sth: sth)) + I18n.t('idea.confirm_sth_2') + duke_information_tag(
+        elsif item('A2_27').value.nil? && diagnostic_item_value('A1_10')&.value.nil?
+          # A2_27 (meadow surface in hectares) shares its prompt with
+          # A1_10 in the legacy flow — answering A1_10 would update A1_10
+          # but leave A2_27 nil, so the original code re-asked A1_10 on
+          # every reopening of A2. Skip the prompt when A1_10 is already
+          # set: the score loses `item_2_6` (which divides A2_17/A2_27)
+          # but the rest of A2 stays computable. A1_10 is owned by A1's
+          # IdeaDiagnosticItem so we need the cross-item lookup, not
+          # the local `item()` scoped to A2.
+          Idea::Question.new(
+            next_indicator: 'A1_10',
+            sentence: idea_information_tag(I18n.t('idea.confirm_sth_1',
+                                                  sth: sth)) + I18n.t('idea.confirm_sth_2') + idea_information_tag(
                                                     I18n.t('idea.confirm_sth_3')
                                                   ),
-            parsed: @idea_diagnostic.id,
-            options: sth
+            prefilled_value: sth,
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A2_17').value.nil? && item('A2_27').value.present? && item('A2_27').value > 0
-          Duke::DukeResponse.new(
-            redirect: 'A2_17',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_17',
+            diagnostic_id: @idea_diagnostic.id
           )
-        elsif gardening? && item('A2_4').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A1_01',
-            parsed: @idea_diagnostic.id
+        elsif gardening? && item('A2_4').value.nil? && diagnostic_item_value('A1_01')&.value.nil?
+          # Same shape as the A2_27/A1_10 case above — the prompt writes
+          # into A1_01 but the gate checks A2_4, so the original code
+          # looped on A1_01 once it had been answered through A1's flow.
+          # Skip when A1_01 is already filled; A2_4 stays nil, which
+          # leaves computable_gardening? false until A2_4 gets its own
+          # input path (out of scope here).
+          Idea::Question.new(
+            next_indicator: 'A1_01',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif field_industrial_fodder_crops? && item('A2_6').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_06',
-            sentence: duke_information_tag(I18n.t('idea.intra_parcel_mix_1',
+          Idea::Question.new(
+            next_indicator: 'A2_06',
+            sentence: idea_information_tag(I18n.t('idea.intra_parcel_mix_1',
                                                   variety: main_variety_of('field_industrial_fodder_crops_idea'))) + I18n.t(
                                                     'idea.intra_parcel_mix_2'
                                                   ),
-            parsed: @idea_diagnostic.id
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif field_industrial_fodder_crops? && item('A2_7').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_07',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_07',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif arboricultural_idea? && item('A2_8').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_08',
-            sentence: duke_information_tag(I18n.t('idea.arboricultural_intra_parcel_mix_1',
+          Idea::Question.new(
+            next_indicator: 'A2_08',
+            sentence: idea_information_tag(I18n.t('idea.arboricultural_intra_parcel_mix_1',
                                                   variety: main_variety_of('arboricultural_idea'))) + I18n.t('idea.intra_parcel_mix_2'),
-            parsed: @idea_diagnostic.id
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif vineyard_idea? && item('A2_13').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_13',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_13',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif vineyard_idea? && item('A2_14').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_14',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_14',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif gardening? && item('A2_15').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_15',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_15',
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif animals_idea? && item('A2_18').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_18',
-            sentence: duke_information_tag(I18n.t('idea.main_ugb_animal_1', variety: main_ugb_animal)) + I18n.t('idea.main_ugb_animal_2'),
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_18',
+            sentence: idea_information_tag(I18n.t('idea.main_ugb_animal_1', variety: main_ugb_animal)) + I18n.t('idea.main_ugb_animal_2'),
+            diagnostic_id: @idea_diagnostic.id
           )
         elsif item('A2_22').value.nil?
-          Duke::DukeResponse.new(
-            redirect: 'A2_22',
-            parsed: @idea_diagnostic.id
+          Idea::Question.new(
+            next_indicator: 'A2_22',
+            diagnostic_id: @idea_diagnostic.id
           )
         else
-          Duke::DukeResponse.new
+          Idea::Question.terminal(diagnostic_id: @idea_diagnostic.id)
         end
       end
 
@@ -281,7 +295,7 @@ module Idea
           rand(2..4)
         end
 
-        # Do we have everything we need to calculate a global score (Duke + Autofilled)
+        # Do we have everything we need to calculate a global score (wizard + autofilled)
         def computable?
           (autofilled?('a2') && computable_vegetal? && computable_gardening? && computable_field_industrial_fodder_crops? &&
           computable_animal? && computable_arboricultural? && computable_vineyard_idea? && !item('A2_22').value.nil?)
