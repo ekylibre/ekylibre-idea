@@ -1,0 +1,228 @@
+fra:
+  idea:
+    questions:
+      A2_6: Présence d'au moins un mélange variétal intra-parcellaire pour l'espèce principale en grandes cultures, cultures fourragères ou industrielles en surface
+        ?
+      A2_11: Présence d'au moins un mélange variétal intra-parcellaire pour l'espèce principale en arboriculture ?
+      A2_16: Présence/Absence de variété population ?
+      A2_18: Nombre de mères croisées pour l'espèce principale en UGB ?
+      A2_20: L'exploitation gère-t-elle la reproduction du cheptel ?
+      A3_3: Présence de cultures pluriannuelles à fauches multiples dans les rotations ?
+      A3_5: Durée de l'interculture en viticulture ?
+      A3_6: Durée de l'interculture en arboriculture ?
+      A3_7: Qualité de l'interculture ?
+      A4_18: Nombre d'ha de tourbières ?
+      A6_1: Utilisation significative (> 10%) ou non significative d'énergie produite sur l'exploitation ou valorisation directe d'énergie renouvelable ?
+      A6_2: Autoconstruction en matière de machinisme ou adaptation de matériel existant ?
+      A6_3: Autonomie dans la réparation du matériel agricole (hors entretien courant) ?
+      A6_4: Utilisation de matériaux produits sur l’exploitation ou en groupe ou en construction même partielle ?
+      A6_5: Part des surfaces cultivées en semences de ferme et/ou plants de ferme (en %) ?
+      A6_8: Production de plants à partir de greffons de la ferme avec certification/analyse vis-à-vis des risques, maladies ?
+      A6_10: Part de la surface cultivée en variétés en démarche club ?
+      A9_1: Origine du prélèvement d'eau (souterrain, superficiel, retenues collinaires) ?
+      A9_3: Quantité totale d'eau prélevée ?
+      A11_1: Quantité d'électricité utilisée (kWh) ?
+      A11_2: Quantité totale de fioul, essence, gazoil utilisée (L) ?
+      A11_3: Quantité de gaz naturel, propane/butane utilisée (kg) ?
+      A11_4: Quantité de bois ou miscanthus utilisée (kgMS) ?
+      A11_5: Quantité de charbon de bois utilisée (kg) ?
+      A11_6: Quantité de lubrifiant utilisée (L) ?
+      A11_7: Quantité de pailles brûlées utilisée (kg) ?
+      A12_4: Présence de vinification en barrique ?
+      A12_5: Présence/Absence d'un système à paturâge dominant ?
+      A12_6: Mise en place de stratégies d'économie (pour les irrigants) ?
+      A12_7: Présence de sous compteurs ou vannes d'arrêt pour l'eau ?
+      A12_8: Lavage des produits avec du matériel spécialisé économe en eau ?
+      A12_9: Micro-irrigation par goutte à goutte ?
+      A12_10: Dispositifs économes en eau pour l'abreuvement ?
+      A12_11: Matériels de lavage des bâtiments et matériels économes en eau ?
+      A12_12: Récupération significative d'eau de pluie ou eaux de lavages pour les besoins de l'exploitation ?
+      A12_13: Irrigation par micro-rrigation, pivot ou rampe frontale ?
+      A13_1: Nombre d'ha où des actions sur la MO des sols sont mises en places ?
+      A13_2: Brûlage des pailles ?
+      A13_4: Surface en couvert permanent ou temporaire d'au moins 3 ans ?
+      A13_9: Mise en place de mesures pour lutter contre l'érosion ?
+      A14_4: Alternance des familles chimiques des produits vétérinaires ?
+      A14_5: Raisonnement du traitement vétérinaire (application systématique ou cas par cas) ?
+      A14_6: Utilisation d'antibiotiques qualifiés de critique ?
+      A15_1: 'Vous arrive-t-il d’avoir des problèmes d’approvisionnement : qualité, quantité, délais ?'
+      A15_2: Vous arrive-t-il d’avoir des problèmes d'accès et de disponibilité des moyens de collecte ?
+      A15_5: Disponibilité et accessibilité de la main d'oeuvre ?
+      A16_7: '% de légumineuses dans les mélanges de légumineuses ?'
+      A16_24: La quantité de sarments ou taille des arbres quittant l'EA ?
+      A16_27: Les taux protéiques de chaque type de lait vendu ?
+      A16_41: Le nombre de mois de présence en bâtiment/an des UGB ?
+      A16_42: Le nombre de mois de présence au pâturage/an des UGB ?
+      A16_46: Mise en place d'actions de limitation de transferts ?
+      A16_47: Epandage ou non de l'intégralité des effluents viti-vinicoles ?
+      A16_48: Surface de cultures à forte capacité d'absorption d'azote pendant le drainage à l'automne ?
+      A17_2: Nombres de pratiques de réduction des émissions de particules primaires et de gaz précurseurs de particules secondaires ?
+      A17_4: Utilisation de matériel anti-dérive (panneaux récupérateurs ET buses anti-dérive) ?
+      A17_5: Utilisation de matériel anti-dérive ?
+      A18_1: Quantité d'électricité utilisée (kWh) ?
+      A18_2: Quantité de fioul, essence, gazoil utilisée (L) ?
+      A18_3: Quantité de gaz naturel, propane/butane, biogaz (65% méthane utilisée (kg) ?
+      A18_10: Le nombre de mois de présence en bâtiment des UGB ?
+      A18_11: Le nombre de mois de présence au pâturage des UGB ?
+      A19_3: Recours à des pratiques alternatives aux pesticides dans une stratégie d'action sur le stock initial ?
+      A19_4: Recours à des pratiques alternatives aux pesticides dans une stratégie d'évitement ?
+      A19_5: Recours à des pratiques alternatives aux pesticides dans une stratégie d'atténuation en végétation ?
+      A19_6: Recours à des pratiques alternatives aux pesticides dans une stratégie de solutions mécaniques ?
+      A19_9: Traitements homéopathiques ou par essences naturelles, implantation de plantes deparasitaires ?
+      A19_10: Utilisation non systématique ou non utilisation de produits rémanents ?
+      A19_11: Absence de délais avant retour des animaux dans les parcelles ?
+      B1_1: SAU consacrée à l'alimentation humaine ou animale ?
+      B1_4: EA en production principale hors sol à destination de la consommation humaine ?
+      B2_1: La quantité totale achetée de concentrés pour le bétail d'origine non locale et achetée hors cadre d'un projet territorial collectif ?
+      B3_1: IGP ?
+      B3_2: AOP/AOC ?
+      B3_4: Label Rouge et autres normes STG ?
+      B3_5: Production à la qualité alimentaire reconnue de par sa qualité nutritionnelle (lait de système herbager, alimentation à base de lin…) ?
+      B4_1: Participation à un programme de prévention, de formation contre le gaspillage ?
+      B4_2: Présence d'une capacité de stockage adaptée et de qualité sur l'exploitation ?
+      B4_3: Développement d'action sociale pour limiter les pertes de produits restés au champ ?
+      B4_4: Dons à des associations d’aide alimentaire ?
+      B4_5: Dons ou trocs/échanges de produits autre qu'aux associations ?
+      B4_6: Commercialisation en alimentation humaine des produits non conformes aux standards des distributeurs ou des transformateurs ?
+      B4_7: Transformation et valorisation à destination alimentaire de tout produit qui aurait été écarté, y compris co- et sous-produits ?
+      B4_8: Valorisation en alimentation animale sur l'exploitation ou en dehors (animaux de ferme, centre équestre, etc) ?
+      B4_9: Autres actions pour limiter les pertes et le gaspillage alimentaires ?
+      B5_1: Démarches favorisant le lien ou l'entre-aide entre le consommateur et le producteur (ouverture de l'exploitation aux consommateurs, journées évenements...)
+        ?
+      B5_2: Démarches favorisant l'apprentissage ou la culture autour de l'aliment (ferme pédagogique, communication de recettes de cuisines...) ?
+      B5_3: Production significative de variétés d'aliments à forte valeur patrimoniale territoriale ou peu représentées en commercialisation courante ?
+      B6_1: Adhésion à des chartes environnementales, contractualisation de programmes locaux environnementaux ?
+      B6_2: Contractualisation pour la prévention des risques naturels pour la collectivité ?
+      B7_1: Présence/Absence de services marchands rendus au territoire ?
+      B7_2: Présence/Absence d'agrotourisme ?
+      B7_3: Présence/Absence de ferme pédagogique ?
+      B8_2: Présence/Absence de vente de proximité au consommateur final ou circuit court de proximité de façon collective ?
+      B8_3: Présence/Absence de vente de proximité au consommateur final ou circuit court de proximité de façon individuelle ?
+      B8_4: Démarche de contractualisation avec des cantines locales / restauration locale / marchés publics locaux ?
+      B9_5: Echanges paille fumier ou équivalent ?
+      B9_6: Achat d'animaux sur le territoire local ?
+      B9_7: Démarche de sélection variétale, reproduction et/ou échanges de semences ?
+      B9_9: Utilisation d’énergie d’origine agricole ou forestière produite sur le territoire local ?
+      B9_10: Approvisionnements locaux pour la production d’énergie sur l’exploitation ?
+      B9_11: Approvisionnements en matériaux produits localement ?
+      B9_12: Autres approvisionnements significatifs en produits locaux (emballage, bouteille, …) ?
+      B9_13: Réutilisation d’eau de station ou de process agro-alimentaire pour irrigation ?
+      B9_14: Valorisation de boues de station et/ou autres déchets urbains transformés ?
+      B9_15: Autres utilisation de sous produit issu de la collectivité ?
+      B10_1: Entretien ou restauration du bâti ancien ?
+      B10_2: Qualité et typicité architecturale et intégration paysagère ?
+      B10_3: Aménagement paysager des surfaces cultivées et lisières et forêts de l’exploitation ?
+      B10_4: Mise en œuvre d’actions visant à valoriser le paysage ?
+      B10_5: Contribution par les pratiques culturales ou d’élevage, à la valorisation et à l’entretien du paysage culturel ?
+      B10_6: Qualité des abords du siège d’exploitation ?
+      B10_7: Contribution au maintien de savoirs locaux productifs ou culturels reconnus ?
+      B10_8: Présence de races/variétés/cépages locaux à faibles effectifs rentrant dans l’acte de production ?
+      B11_1: Exploitation en zone rurale ou urbaine/péri-urbaine ?
+      B11_2: Libre d'accès aux abords de l'EA en zone rurale ?
+      B11_3: LIbre d'accès aux chemins privatifs de l'EA en zone urbaine et péri-urbaine ?
+      B11_4: Entretien des chemins de randonnée ou de voirie d'accès ?
+      B12_1: Présence de batteries, huiles usagées, déchets amiantés sur l'EA ?
+      B12_2: Présence/absence de tri, recyclage de batteries, huiles usagées, déchets amiantés sur l'EA ?
+      B12_3: Présence de produits phytosanitaires, médicaments et déchets de soins à risques infectieux DASRI, produits lessiviels et leurs emballages ?
+      B12_4: Présence/absence de tri, recyclage de produits phytosanitaires, médicaments et déchets de soins à risques infectieux DASRI, produits lessiviels et leurs
+        emballages ?
+      B12_5: Présence d'ampoules, tubes néons, ampoules infrarouges, à vapeur de sodium...
+      B12_6: Présence/absence de tri, recyclage d'ampoules, tubes néons, ampoules infrarouges, à vapeur de sodium...
+      B12_7: Présence de déchets plastiques et pneumatiques et présence/absence de tri, recyclage ?
+      B12_8: Présence/absence de tri, recyclage de déchets plastiques et pneumatiques ?
+      B12_9: Utilisation d'emballages réutilisables et/ou consigné pour la commercialisation des produits ?
+      B12_10: Pratiques à risques (brûlage, dépôt sauvage, abandon...) ?
+      B13_1: Participation à des réseaux de connaissance ?
+      B13_2: Mutualisation des matériels / équipements / bâtiments / services ?
+      B14_2: Nombre d'UTH ?
+      B14_3: Création d’un emploi à plein temps sur l’exploitation dans les 5 dernières années ?
+      B14_4: Création d’un emploi à temps partiel sur l’exploitation dans les 5 dernières années ?
+      B14_5: Création d’un emploi dans un réseau de proximité dans les 5 dernières années ?
+      B14_6: Plus de 50% de la main d’œuvre saisonnière réside de façon permanente sur le territoire ?
+      B14_7: Présence d'un accident du travail ou maladie professionnelle parmi les salariés au cours de l'année précédente ?
+      B14_8: Nature des tâches ?
+      B14_9: Autonomie et responsabilité dans les missions confiées aux salariés ?
+      B15_1: Banque de travail ?
+      B15_2: Entraide (>10j/an) ?
+      B15_3: Appartenance à un groupement d'employeur ?
+      B15_4: CUMA intégrale (plus de 80% du matériel est mis en commun) ?
+      B15_5: Projets productifs en commun ?
+      B16_1: Auto-estimation du plaisir et satisfaction au travail de 0 à 4 ?
+      B16_2: Nombre de semaines par an où l'agriculteur se sent surchargé ?
+      B16_3: Estimez-vous nécessaire de prendre des congés ?
+      B16_4: Prenez-vous des congés ?
+      B16_5: Auto-estimation de la pénibilité du travail sur une échelle de 0 à -4 (très pénible) ?
+      B17_1: Présence et accessibilité de toilettes et lavabo ?
+      B17_2: Présence et accessibilité de douches et vestiaires ?
+      B17_3: Salle de pause chauffée en hiver et au frais en été ?
+      B17_4: Présence et accessibilité d'une cuisine équipée ?
+      B17_5: 'Si présence de main d’œuvre temporaire : Accès à un logement aux normes sur l’exploitation ou mise en contact des travailleurs temporaires avec des
+        hébergements proches et accessibles ?'
+      B17_6: Mise en place d’un protocole sécurité au travail (document unique...) ?
+      B17_7: Formation des travailleurs à la sécurité et à l’utilisation du matériel ?
+      B17_8: Mise à disposition et maintien des EPI adéquats ?
+      B17_9: Mise à disposition de protection contre le soleil et la chaleur ?
+      B17_10: Prise en compte des remarques des travailleurs en lien avec leurs sécurités dans l’organisation du travail et des activités ?
+      B17_11: Exposition des exploitants et salariés aux pesticides ?
+      B17_12: Mise en oeuvre de technique de fumigation ou brumisation ?
+      B17_13: Local de stockage des pesticides conforme aux préconisations réglementaires ?
+      B18_1: Nombre de jours par an et par UTH de formations ?
+      B18_2: Accueil de stagiaire ou apprenti au cours des deux dernières années ?
+      B18_3: Nombre de groupes de professionnels ou d'étudiants accueillis ?
+      B19_1: Implication dans des structures professionnelles agricoles ?
+      B19_2: Implication dans des structures non agricoles (associatives et/ou électives) hors champ professionnel dans le territoire ?
+      B19_3: Travail avec des structures relevant du champ de l'ESS et pratiques d’insertion et/ou d’expérimentation sociale ?
+      B19_4: Implication de citoyens dans les travaux ou la vie de l'exploitation ?
+      B19_5: Accueil bénévole de public ?
+      B19_6: Habitation très éloignée des lieux de production ou non ?
+      B20_1: Degré d'engagement dans un référentiel accessible publiquement ?
+      B20_2: Implication des consommateurs ?
+      B20_3: Transparence de l'agricuteur sur ses pratiques sur la base d'initiatives personnelles ?
+      B21_1: Auto-Estimation de la qualité de vie sur une échelle de 0 à 6 ?
+      B22_1: Auto-estimation de 0 à 3 du sentiment d'isolement géographique, social, culturel, accès aux services publics ?
+      B22_2: Auto-estimation de 0 à 3 de la qualité d'accès aux services productifs de l'exploitation ?
+      B23_1: Accès à l’eau propre, alimentation suffisante ?
+      B23_2: Bon état général du troupeau ?
+      B23_3: Confort dans les bâtiments d’élevage et au champ ?
+      B23_4: Conditions de transports (et abattage) respectant les obligations légales ?
+      B23_5: Cahier des charges avec volet BEA ?
+      B23_6: Arrêt des interventions douloureuses non curatives ?
+      B23_7: Euthanasie systématique des animaux pathologiquement condamnés ?
+      B23_8: Elevage en plein air permanent avec présence d'abris ?
+      B23_9: Abattage à la ferme des petits animaux avec étourdissement ?
+      B23_10: Relation de l’éleveur à l’animal / vision du métier ?
+      B23_11: Autres initiatives pour le BEA ?
+      B23_12: Présence d’atelier de claustration permanente ou attache permanente ?
+      B23_13: Surbooking dans les batiments ?
+      B23_14: Zéro-pâturage ?
+      B23_15: Ecornage à l’âge adulte ?
+      B23_16: Ecornage sans anesthésie ou analgésie ?
+      B23_17: Gavage forcé ?
+      B23_18: Gestion respectueuse et favorable à la faune des zones d'habitat naturel ?
+      B23_19: Mise en place de zones favorables à la construction des nids ?
+      B23_20: Mesures de conservation des zones humides, mares et étangs ?
+      B23_21: Mesure ponctuelle de protection de l'habitat d'une espèce menacée ?
+      B23_22: Libre accès aux étabes et toitures de bâtiments pour la nidification ?
+      B23_23: Destruction des nids ?
+      B23_24: Utilisation d'adhésifs à insectes ?
+      B23_25: Mise en place de zones attractives refuges spécifiques pour héberger la faune ?
+      B23_26: Adaptation des dates d'interventions au calendrier de reproduction de la faune sauvage ?
+      B23_27: Maintien d'habitats et de sources de nourritures dans les parcelles ?
+      B23_28: Limitation de l'intensité des pratiques sur la surface à la périphérie des parcelles ?
+      B23_29: Mise en place d'infrastructures spécifiques pour éviter les accidents ?
+      B23_30: Largeur de travail réduite ou utilisation de barres d'effarouchement (moisson, herse, …) ?
+      B23_31: Fauche ou récolte à faible vitesse (< 15 km/h) et permettant la fuite des animaux ?
+      B23_32: Mise en place de clôtures et de filets respectant la faune sauvage ?
+      B23_33: Utilisation exclusive de techniques non létales pour la lutte contre la déprédation ?
+      C1_6: Auto-estimation de la capacité de l'exploitation à dégager un revenu suffisant sur une échelle de 0 à 5 ?
+      C4_1: Produit brut de chaque atelier productif ?
+      C4_2: Chiffre d'affaires de chaque produit vendu ?
+      C5_2: Type de contrat pour la production principale ?
+      C5_3: Atelier principal en intégration et travail à façon intégral ?
+      C6_1: Montant des aides du 1er pilier de la PAC ?
+      C7_1: Existe-t-il un revenu significatif extérieur (revenus non agricoles (revenus immobiliers, salaires extérieurs) ou revenu du conjoint)) au sein du foyer
+        de l'exploitant ?
+      C9_1: 'A dire d''agriculteur : existence de l''exploitation dans 10 ans (quasi-certaine, probable souhaitée si possible, disparition probable) ?'
+      C9_2: Foncier sécurisé ?
+      C9_3: Présence de projet de développement futur du foncier ?
+      C9_4: 'Structure du parcellaire : cohérent, éloignement, absence de découpage, absence de discontinuité...'

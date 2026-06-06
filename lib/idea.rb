@@ -7,11 +7,13 @@ require 'idea/indicators'
 require 'idea/question'
 require 'idea/sentence_helpers'
 require 'idea/components/base'
-require 'idea/components/a1'
-require 'idea/components/a2'
-require 'idea/components/a3'
-require 'idea/components/a4'
-require 'idea/components/a5'
+
+# Load every component matching lib/idea/components/[abc]<digits>.rb so
+# the 53-indicator catalog stays in sync with config/indicators.yml
+# without us hand-maintaining a require list.
+Dir[File.join(__dir__, 'idea', 'components', '[abc][0-9]*.rb')]
+  .sort_by { |p| [File.basename(p, '.rb')[0], File.basename(p, '.rb')[1..].to_i] }
+  .each { |p| require p }
 
 # Analytics on farm performance towards durability
 module Idea

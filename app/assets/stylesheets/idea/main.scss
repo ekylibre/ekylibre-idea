@@ -102,3 +102,70 @@ table tbody tr:hover td.idea.borders.idea-diag-progress {
     }
   }
 }
+
+// Global IDEA score banner at the top of show.html.haml. Hidden when
+// nothing is scored yet, so the page starts clean for new diagnostics.
+.idea-global-score {
+  background: linear-gradient(90deg, #3340A4 0%, #5A6DC5 100%);
+  color: white;
+  border-radius: 4px;
+  padding: 12px 18px;
+  margin: 10px 0;
+
+  &__title {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
+
+  &__value {
+    margin-top: 4px;
+  }
+
+  &__number {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  &__percent {
+    font-size: 1.1em;
+    opacity: 0.9;
+  }
+
+  &__hint {
+    margin-top: 6px;
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.85;
+  }
+}
+
+// Per-dimension summary inside each cobble (progress bar + answered/total).
+.idea-dimension-summary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 12px;
+
+  &__progress {
+    flex: 1;
+    height: 6px;
+    background: #E5E8F2;
+    border-radius: 3px;
+    overflow: hidden;
+
+    .progress-bar {
+      background: #3340A4;
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+  }
+
+  &__count {
+    font-size: 0.85em;
+    color: #5A6480;
+    white-space: nowrap;
+  }
+}

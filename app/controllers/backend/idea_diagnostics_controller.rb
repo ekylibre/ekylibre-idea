@@ -20,7 +20,9 @@ module Backend
     # Whitelist gating the user-supplied `indicator` param before it is
     # used to resolve a constant under Idea::Components::*. Without this
     # the next_question/answer actions would be a const_get arbitrary-class hole.
-    NEXT_QUESTION_INDICATORS = %w[A1 A2 A3 A4 A5].freeze
+    # Source of truth is the YAML registry (53 indicators), so we don't
+    # have to hand-maintain a list every time a new indicator lands.
+    NEXT_QUESTION_INDICATORS = Idea::Indicators.components.freeze
 
     # Valid natures for IdeaDiagnosticItemValue#set! — mirrors the
     # model-side inclusion validator. Bouncing here gives a JSON 422
@@ -161,8 +163,13 @@ module Backend
       # trip. Log and continue; the dashboard will reflect the stale score
       # until the next successful recompute.
       indicators_to_score = Set.new([params[:indicator]])
-      owning_indicator = params[:item_value].to_s[0, 2]
-      indicators_to_score << owning_indicator if NEXT_QUESTION_INDICATORS.include?(owning_indicator)
+      # Extract the indicator prefix correctly: "A10_3" → "A10", "C11_2" →
+      # "C11", "B23_15" → "B23". A naive [0, 2] would yield "A1" for
+      # "A10_3" and recompute the wrong indicator.
+      if (m = params[:item_value].to_s.match(/\A([ABC]\d+)_\d+\z/))
+        owning = m[1]
+        indicators_to_score << owning if NEXT_QUESTION_INDICATORS.include?(owning)
+      end
       indicators_to_score.each do |ind|
         begin
           Idea::Components.const_get(ind).new(diagnostic_id: diagnostic.id).update_global_score

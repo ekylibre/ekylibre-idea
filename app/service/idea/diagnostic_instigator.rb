@@ -1,17 +1,21 @@
 # frozen_string_literal: true
 
 module Idea
-  # Creates the IdeaDiagnosticItem rows and their backing
-  # IdeaDiagnosticItemValue placeholders for a fresh diagnostic, then
-  # enqueues the autofill job. Invoked from
+  # Creates one IdeaDiagnosticItem per IDEA4 indicator (53 total across
+  # dimensions A/B/C) plus their backing IdeaDiagnosticItemValue
+  # placeholders, then enqueues the autofill job. Invoked from
   # Backend::IdeaDiagnosticsController#create.
+  #
+  # The previous implementation only seeded the 5 "functional_diversity"
+  # indicators (A1-A5); it now iterates over the full registry loaded
+  # from config/indicators.yml.
   class DiagnosticInstigator
     def initialize(idea_diagnostic)
       @idea_diagnostic = idea_diagnostic
     end
 
     def instigate
-      create_functional_diversity_items
+      create_indicator_items
       @idea_diagnostic.idea_diagnostic_items.each do |item|
         create_diagnostic_item_values(item)
       end
@@ -20,20 +24,22 @@ module Idea
 
     private
 
-      def create_functional_diversity_items
-        Idea::Indicators.functional_diversity_attributes.each do |fd_attrs|
-          IdeaDiagnosticItem.create(
-            {
-              idea_diagnostic: @idea_diagnostic,
-              group: 'functional_diversity'
-            }.merge(fd_attrs)
-          )
+      def create_indicator_items
+        Idea::Indicators.all_item_attributes.each do |attrs|
+          IdeaDiagnosticItem.create(attrs.merge(idea_diagnostic: @idea_diagnostic))
         end
       end
 
+      # Names without zero-padding ("A2_1", "A4_9", "C11_2") — components
+      # and controllers normalize incoming padded forms via
+      # Idea::Indicators.normalize_item_value_name.
       def create_diagnostic_item_values(item)
-        (1..Idea::Indicators.item_values_count(item.idea_id)).each do |id|
-          IdeaDiagnosticItemValue.create(idea_diagnostic_item: item, name: "#{item.idea_id}_#{id}")
+        count = Idea::Indicators.item_values_count(item.idea_id) || 0
+        (1..count).each do |id|
+          IdeaDiagnosticItemValue.create(
+            idea_diagnostic_item: item,
+            name: "#{item.idea_id}_#{id}"
+          )
         end
       end
   end

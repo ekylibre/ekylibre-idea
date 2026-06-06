@@ -1,0 +1,2582 @@
+dimensions:
+  A: Agro-écologique
+  B: Socio-territoriale
+  C: Économique
+indicators:
+- id: A1
+  dimension: A
+  label: Diversité des espèces cultivées
+  treshold: 5
+  items:
+  - id: A1_1
+    label: Activités et surfaces en maraichage industriel (productions industrielles de légumes de plein champ)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A1_2
+    label: Nombre d'espèces productives annuelles, pluriannuelles, pérennes et industrielles cultivées en pur
+    nature: integer
+    source: autofill
+    crop: 'GC
+
+      VIT
+
+      ARB'
+  - id: A1_3
+    label: Nombre d'espèces productives cultivées dans chaque association (hors STH)
+    nature: integer
+    source: autofill
+    crop: 'GC
+
+      VIT
+
+      ARB'
+  - id: A1_4
+    label: Présence d'un couvert d’une famille botanique qui ne figure pas dans les espèces cultivées
+    nature: boolean
+    source: autofill
+    crop: 'GC
+
+      VIT
+
+      ARB'
+  - id: A1_5
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A1_6
+    label: Les surfaces des 2 cultures les plus importantes en surface (hors STH)
+    nature: float
+    source: autofill
+    crop: 'GC
+
+      VIT
+
+      ARB'
+  - id: A1_7
+    label: Nombre de familles botaniques cultivées
+    nature: integer
+    source: autofill
+    crop: MAR
+  - id: A1_8
+    label: Est-ce que la diversification des familles botaniques est présente toute l'année ?
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A1_9
+    label: L'exploitation produit-elle l'ensemble des 3 catégories de légumes ?
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A1_10
+    label: Surface Toujours en Herbe (STH)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A1_11
+    label: Surface totale en cultures annuelles, pluriannuelles, industrielles et pérennes (hors STH)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A1_12
+    label: Surface totale en maraichage non industriel
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A2
+  dimension: A
+  label: Diversité génétique
+  treshold: 5
+  items:
+  - id: A2_1
+    label: Participation à des programmes génétiques
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A2_2
+    label: Intégration du critère de tolérance/résistance/rusticité dans les choix des variétés/cépages
+    nature: string
+    source: wizard
+    crop: PV
+  - id: A2_3
+    label: Surface de la culture principale occupée par les 2 variétés principales
+    nature: float
+    source: autofill
+    crop: GC
+  - id: A2_4
+    label: Surface totale de la culture principale de grandes cultures, cultures fourragères ou industrielles
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_5
+    label: Nombre de variétés cultivées pour l'espèces principale en surface
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_6
+    label: Présence d'au moins un mélange variétal intra-parcellaire pour l'espèce principale en grandes cultures, cultures
+      fourragères ou industrielles en surface
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A2_7
+    label: Présence/Absence de variété population pour l'espèce principale en surface
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A2_8
+    label: Nombre de variétés cultivées pour l'espèce principale en surface
+    nature: float
+    source: autofill
+    crop: ARB
+  - id: A2_9
+    label: Surface de la culture principale occupée par les 2 variétés principales
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_10
+    label: Surface totale de la culture principale arboricole
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_11
+    label: Présence d'au moins un mélange variétal intra-parcellaire pour l'espèce principale en arboriculture
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A2_12
+    label: Nombre de cépages
+    nature: integer
+    source: autofill
+    crop: VIT
+  - id: A2_13
+    label: Pratique de l'encépagement polyclonal
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A2_14
+    label: Présence de cépage peu représenté dans l'AOC
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A2_15
+    label: Nombre d'espèces botaniques cultivées avec au moins 3 variétés
+    nature: integer
+    source: autofill
+    crop: MAR
+  - id: A2_16
+    label: Présence/Absence de variété population
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A2_17
+    label: STH gérées extensivement
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A2_18
+    label: Nombre de mères croisées pour l'espèce principale en UGB
+    nature: integer
+    source: wizard
+    crop: ELV
+  - id: A2_19
+    label: Nombre total de mères pour l'espèce principale en UGB
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A2_20
+    label: L'exploitation gère-t-elle la reproduction du cheptel ?
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A2_21
+    label: Nombre de mères issues de races à faibles effectifs pour l'espèce principale en UGB
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A2_22
+    label: Programme de sélection sur des critères associés à la rusticité sur l'espèce principale en UGB
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A2_23
+    label: Surface totale en grandes cultures, cultures fourragères ou cultures industrielles
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_24
+    label: Surface totale en arboriculture
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_25
+    label: Surface totale en viticulture
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_26
+    label: Surface totale en maraichage non industriel
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_27
+    label: Surface Toujours en Herbe (STH)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A2_28
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A3
+  dimension: A
+  label: Diversité temporelle des cultures
+  treshold: 5
+  items:
+  - id: A3_1
+    label: Surfaces à retour court
+    nature: float
+    source: autofill
+    crop: GC
+  - id: A3_2
+    label: Surface totale en cultures annuelles, pluriannuelles et industrielles et prairies temporaires
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A3_3
+    label: Présence de cultures pluriannuelles à fauches multiples dans les rotations
+    nature: boolean
+    source: wizard
+    crop: GC
+  - id: A3_4
+    label: Présence d'un couvert présentant au moins une espèce d'une famille botanique différente i) de la culture qui précède
+      le couvert; ii) de la culture qui suit le couvert et iii) de la famille botanique d
+    nature: boolean
+    source: autofill
+    crop: GC
+  - id: A3_5
+    label: Durée de l'interculture en viticulture
+    nature: string
+    source: wizard
+    crop: VIT
+  - id: A3_6
+    label: Durée de l'interculture en arboriculture
+    nature: string
+    source: wizard
+    crop: ARB
+  - id: A3_7
+    label: Qualité de l'interculture
+    nature: string
+    source: wizard
+    crop: 'VIT
+
+      ARB'
+  - id: A3_8
+    label: Nombre de familles botaniques différentes dans le cycle de rotation le plus important en surface
+    nature: float
+    source: autofill
+    crop: MAR
+  - id: A3_9
+    label: Présence dans le cycle de rotation le plus important en surface de la même famille botanique deux fois de suite
+    nature: boolean
+    source: autofill
+    crop: TTA
+  - id: A3_10
+    label: Intégration de couverts intermédiaires à objectif agronomique dans les rotations
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A3_11
+    label: Surface Toujours en Herbe (STH)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A3_12
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A3_13
+    label: Surface totale en cultures pérennes
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A3_14
+    label: Surface totale en maraichage non industriel
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A4
+  dimension: A
+  label: Qualité de l'organisation spatiale
+  treshold: 5
+  items:
+  - id: A4_1
+    label: Somme des surfaces des ilots de grandes cultures, cultures fourragères ou industrielles supérieures à 12ha
+    nature: float
+    source: autofill
+    crop: GC
+  - id: A4_2
+    label: Surface totale en grandes cultures, cultures fourragères et industrielles
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_3
+    label: Somme des surfaces des ilots de cultures supérieures à 6ha en arboriculture
+    nature: float
+    source: autofill
+    crop: ARB
+  - id: A4_4
+    label: Somme des surfaces des ilots de cultures supérieures à 6ha en viticulture
+    nature: float
+    source: autofill
+    crop: VIT
+  - id: A4_5
+    label: Somme des surfaces des ilots de cultures supérieures à 6ha en maraichage
+    nature: float
+    source: autofill
+    crop: MAR
+  - id: A4_6
+    label: Surface totale en arboriculture
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_7
+    label: Surface totale en viticulture
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_8
+    label: Surface totale en maraichage non industriel
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_9
+    label: Mise en place de cultures associées et/ou semis sous couvert sur une même planche
+    nature: string
+    source: wizard
+    crop: MAR
+  - id: A4_10
+    label: Nombre de mètres de haies buissonnantes (< 5 m de haut)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_11
+    label: Nombre de mètres de haies arborescentes (> 5 m de haut)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_12
+    label: Nombre de mètres d'arbres alignés, lisières de forêt
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_13
+    label: Nombre d'arbres isolés
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A4_14
+    label: Nombre de mètres de périmètre de mares et lavognes
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_15
+    label: Nombre de mètres de ripisylves
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_16
+    label: Nombre de mètres de muret, fossés, talus et terrasses
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_17
+    label: Nombre d'ha d'agroforesterie intraparcellaire (environ 100 arbres/ha)
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A4_18
+    label: Nombre d'ha de tourbières
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: A4_19
+    label: STH gérées extensivement
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A4_20
+    label: Nombre d'ha de jachères
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A4_21
+    label: Nombre d'ha de bordures, bandes enherbées et bandes tampon
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A4_22
+    label: Nombre d'ha de bosquets
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A4_23
+    label: Nombre d'ha de cultures pérennes avec enherbement permanent (avec au moins 30% de peu fauché)
+    nature: float
+    source: autofill
+    crop: 'VIT
+
+      ARB'
+  - id: A4_24
+    label: Coefficient de conversion en m2 de biodiversité pour l'ensemble des SIE ci-dessus
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A4_25
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A4_26
+    label: Surface Toujours en Herbe (STH)
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A5
+  dimension: A
+  label: Gestion des insectes pollinisateurs et des auxiliaires des cultures
+  treshold: 5
+  items:
+  - id: A5_1
+    label: Mode de gestion des zones non productives
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A5_2
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A5_3
+    label: Nombre d'ha ayant reçu au moins un insecticide
+    nature: integer
+    source: autofill
+    crop: PV
+  - id: A5_4
+    label: Nombre d'UGB recevant au moins un insecticide
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A5_5
+    label: Nombre d'UGB total
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A5_6
+    label: Présence de pratiques favorisant les espèces mellifères à destination des pollinisateurs et permettant une floraison
+      échelonnée au cours de l'année
+    nature: boolean
+    source: autofill
+    crop: TTA
+- id: A6
+  dimension: A
+  label: Autonomie en énergie, matériaux, matériels, semences et plants
+  treshold: 8
+  items:
+  - id: A6_1
+    label: Utilisation significative (> 10%) ou non significative d'énergie produite sur l'exploitation ou valorisation directe
+      d'énergie renouvelable
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A6_2
+    label: Autoconstruction en matière de machinisme ou adaptation de matériel existant
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A6_3
+    label: Autonomie dans la réparation du matériel agricole (hors entretien courant)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A6_4
+    label: Utilisation de matériaux produits sur l’exploitation ou en groupe ou en construction même partielle
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A6_5
+    label: Part des surfaces cultivées en semences de ferme et/ou plants de ferme (en %)
+    nature: float
+    source: wizard
+    crop: 'GC
+
+      MAR'
+  - id: A6_6
+    label: Surface totale en grandes cultures, cultures fourragères, industrielles (y compris prairies temporaires) et maraîchage
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A6_8
+    label: Production de plants à partir de greffons de la ferme avec certification/analyse vis-à-vis des risques, maladies
+    nature: string
+    source: wizard
+    crop: VIT
+  - id: A6_9
+    label: Surface totale en viticulture
+    nature: float
+    source: autofill
+    crop: VIT
+  - id: A6_10
+    label: Part de la surface cultivée en variétés en démarche club
+    nature: float
+    source: wizard
+    crop: ARB
+  - id: A6_11
+    label: Surface totale en arboriculture
+    nature: float
+    source: autofill
+    crop: ARB
+- id: A7
+  dimension: A
+  label: Autonomie alimentaire de l'élevage
+  treshold: 8
+  items:
+  - id: A7_1
+    label: Quantité de fourrages grossiers et litière achetés (y compris luzerne déshydratée)
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A7_2
+    label: Quantité de fourrages consommés
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A7_3
+    label: Quantité d'aliments concentrés achetés
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A7_4
+    label: Quantité d'aliments concentrés consommés
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A7_5
+    label: Type d'élevage
+    nature: string
+    source: autofill
+    crop: ELV
+- id: A8
+  dimension: A
+  label: Autonomie en azote
+  treshold: 8
+  items:
+  - id: A8_1
+    label: Les quantités achetées de chaque engrais minéral
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_2
+    label: La quantité d'N/ t pour chaque engrais minéral acheté
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_3
+    label: Le coefficient d'utilisation de l'N pour chaque engrais organique acheté ou utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_4
+    label: La quantité d'N/ t pour chaque engrais organique acheté ou utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_5
+    label: Les quantités achetées de chaque engrais organique
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_6
+    label: La quantité d'N/ t pour chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_7
+    label: Les quantités utilisées de chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_8
+    label: Les quantités utilisées de chaque engrais organique utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_9
+    label: Le % de légumineuses dans les cultures (y compris prairies)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A8_10
+    label: Le rendement de chaque culture de légumineuses (pure ou prairies)
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_11
+    label: Les coefficients d'N fixé/tMS des légumineuses de prairies ou légumineuses pures
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A8_12
+    label: La surface de chaque culture de légumineuses (pure ou prairies)
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A9
+  dimension: A
+  label: Sobriété dans l'usage de l'eau et partage de la ressource
+  treshold: 8
+  items:
+  - id: A9_1
+    label: Origine du prélèvement d'eau (souterrain, superficiel, retenues collinaires)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A9_2
+    label: L'exploitation appartient-elle à une ZRE ?
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A9_3
+    label: Quantité totale d'eau prélevée
+    nature: string
+    source: wizard
+    crop: TTA
+- id: A10
+  dimension: A
+  label: Sobriété dans l'utilisation du phosphore
+  treshold: 8
+  items:
+  - id: A10_1
+    label: Les quantités utilisées de chaque engrais minéral phosphoré
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A10_2
+    label: La quantité de P/ t pour chaque engrais minéral phosphoré utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A10_3
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A11
+  dimension: A
+  label: Sobriété dans la consommation en énergie
+  treshold: 8
+  items:
+  - id: A11_1
+    label: Quantité d'électricité utilisée (kWh)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A11_2
+    label: Quantité totale de fioul, essence, gazoil utilisée (L)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A11_3
+    label: Quantité de gaz naturel, propane/butane utilisée (kg)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A11_4
+    label: Quantité de bois ou miscanthus utilisée (kgMS)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A11_5
+    label: Quantité de charbon de bois utilisée (kg)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A11_6
+    label: Quantité de lubrifiant utilisée (L)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A11_7
+    label: Quantité de pailles brûlées utilisée (kg)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A11_8
+    label: Quantité de tourteaux de soja utilisée (tMB)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_9
+    label: Quantité de tourteaux de colza utilisée (tMB)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_10
+    label: Quantité de céréales graines utilisée (tMB)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_11
+    label: Quantité de pulpes surpréssées utilisée (tMS)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_12
+    label: Quantité de concentré du commerce utilisée (t)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_13
+    label: Quantité d'aliments porcs utilisée (poudre de lait, aliment porc sevrage et porc charcutier) (t)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_14
+    label: Quantité d'aliment volaille utilisée (t)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_15
+    label: Quantité de luzerne deshydratée utilisée (tMS)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A11_16
+    label: Les quantités utilisées pour chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A11_17
+    label: La quantité d'N/ t pour chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A11_18
+    label: Les EQF de l'ensemble des énergies directes et indirectes ci-dessus
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A11_19
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+- id: A12
+  dimension: A
+  label: Raisonner l'utilisation de l'eau
+  treshold: 8
+  items:
+  - id: A12_1
+    label: Système dominant en surface
+    nature: float
+    source: other
+    crop: TTA
+  - id: A12_2
+    label: Exigence en eau de la culture irriguée dominante en surface
+    nature: float
+    source: autofill
+    crop: PV (hors viti)
+  - id: A12_3
+    label: Présence d'irrigation
+    nature: boolean
+    source: autofill
+    crop: TTA
+  - id: A12_4
+    label: Présence de vinification en barrique
+    nature: boolean
+    source: wizard
+    crop: VIT
+  - id: A12_5
+    label: Présence/Absence d'un système à paturâge dominant
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: A12_6
+    label: Mise en place de stratégies d'économie (pour les irrigants)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A12_7
+    label: Présence de sous compteurs ou vannes d'arrêt pour l'eau
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: A12_8
+    label: Lavage des produits avec du matériel spécialisé économe en eau
+    nature: string
+    source: wizard
+    crop: 'MAR
+
+      GC'
+  - id: A12_9
+    label: Micro-irrigation par goutte à goutte
+    nature: string
+    source: wizard
+    crop: VIT
+  - id: A12_10
+    label: Dispositifs économes en eau pour l'abreuvement
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: A12_11
+    label: Matériels de lavage des bâtiments et matériels économes en eau
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A12_12
+    label: Récupération significative d'eau de pluie ou eaux de lavages pour les besoins de l'exploitation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A12_13
+    label: Irrigation par micro-rrigation, pivot ou rampe frontale
+    nature: string
+    source: wizard
+    crop: 'GC
+
+      MAR
+
+      ARB'
+- id: A13
+  dimension: A
+  label: Favoriser la fertilité du sol
+  treshold: 8
+  items:
+  - id: A13_1
+    label: Nombre d'ha où des actions sur la MO des sols sont mises en places
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: A13_2
+    label: Brûlage des pailles
+    nature: string
+    source: wizard
+    crop: GC
+  - id: A13_3
+    label: Contamination des sols par les métaux lourds
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A13_4
+    label: Surface en couvert permanent ou temporaire d'au moins 3 ans
+    nature: float
+    source: wizard
+    crop: PV
+  - id: A13_5
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A13_6
+    label: Surface non travaillée
+    nature: float
+    source: autofill
+    crop: PV
+  - id: A13_7
+    label: Surface sans traitement de pesticides
+    nature: float
+    source: autofill
+    crop: PV
+  - id: A13_8
+    label: Désinfection vapeur des sols
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A13_9
+    label: Mise en place de mesures pour lutter contre l'érosion
+    nature: string
+    source: wizard
+    crop: TTA
+- id: A14
+  dimension: A
+  label: Maintenir l'efficacité de la protection sanitaire des cultures et des animaux
+  treshold: 4
+  items:
+  - id: A14_1
+    label: Usage de produits phytosanitaires
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A14_2
+    label: Usage de produits vétérinaires
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A14_3
+    label: Stratégie d'alternance des matières actives des produits phytosanitaires
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A14_4
+    label: Alternance des familles chimiques des produits vétérinaires
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: A14_5
+    label: Raisonnement du traitement vétérinaire (application systématique ou cas par cas)
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: A14_6
+    label: Utilisation d'antibiotiques qualifiés de critique
+    nature: string
+    source: wizard
+    crop: ELV
+- id: A15
+  dimension: A
+  label: Sécuriser la disponibilité des moyens de production
+  treshold: 4
+  items:
+  - id: A15_1
+    label: 'Vous arrive-t-il d’avoir des problèmes d’approvisionnement : qualité, quantité, délais ?'
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A15_2
+    label: Vous arrive-t-il d’avoir des problèmes d'accès et de disponibilité des moyens de collecte ?
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A15_3
+    label: Quantité minimale de fourrage en stock à la date de mise à l'herbe des animaux
+    nature: string
+    source: other
+    crop: ELV ruminants
+  - id: A15_4
+    label: Nombre d'UGB total
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A15_5
+    label: Disponibilité et accessibilité de la main d'oeuvre
+    nature: string
+    source: wizard
+    crop: TTA
+- id: A16
+  dimension: A
+  label: Réduction de l'impact des pratiques sur la qualité de l'eau
+  treshold: 6
+  items:
+  - id: A16_1
+    label: Nombre d'UGB total
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A16_2
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A16_3
+    label: Les quantités utiisées de chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_4
+    label: La quantité d'N/ t pour chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_5
+    label: Les quantités achetées de chaque engrais organique acheté
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_6
+    label: La quantité d'N/t pour chaque engrais organique acheté
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_7
+    label: '% de légumineuses dans les mélanges de légumineuses'
+    nature: float
+    source: wizard
+    crop: PV
+  - id: A16_8
+    label: Les rendements de chaque culture de légumineuses pures ou légumineuses de prairies
+    nature: string
+    source: autofill
+    crop: PV
+  - id: A16_9
+    label: La surface de chaque culture de légumineuses (pures ou prairies)
+    nature: float
+    source: autofill
+    crop: PV
+  - id: A16_10
+    label: Coefficients d'N fixé/tMS ou /qMF des cultures de légumineuses en pur
+    nature: string
+    source: autofill
+    crop: PV
+  - id: A16_11
+    label: Coefficient d'N/tMS dans les légumineuses de prairies
+    nature: string
+    source: autofill
+    crop: PV
+  - id: A16_12
+    label: Les quantités de chaque aliment acheté (fourrages grossiers, litières, luzerne déshydratée, concentrés...)
+    nature: string
+    source: other
+    crop: ELV
+  - id: A16_13
+    label: La quantité d'N/t pour chaque aliment acheté
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_14
+    label: Le nombre de têtes achetées de chaque type d'animal acheté
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A16_15
+    label: Le poids unitaire de chaque type d'animal acheté
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_16
+    label: La quantité totale d'oeuf achetée pour chaque type d'oeuf
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_17
+    label: La quantité d'N/t d'animal ou oeuf pour chaque type d'animal/oeuf acheté
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_18
+    label: Les quantités d'engrais organiques quittant l'EA pour chaque type d'engrais organiques
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_19
+    label: La quantité d'N/ t pour chaque engrais organique quittant l'EA
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_20
+    label: Les quantités de végétaux (cultures, fourrages) quittant l'EA pour chaque type de végétal
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_21
+    label: La quantité d'N/t de végétal pour chaque type de végétal quittant l'EA
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_22
+    label: La quantité de fruits ou légumes vendus pour chaque type de fruits ou légumes
+    nature: string
+    source: autofill
+    crop: 'MAR
+
+      VIT
+
+      ARB'
+  - id: A16_23
+    label: La quantité d'N/t dans les fruits et légumes vendus pour chaque type de fruits/légumes
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_24
+    label: La quantité de sarments ou taille des arbres quittant l'EA
+    nature: string
+    source: wizard
+    crop: 'VIT
+
+      ARB'
+  - id: A16_25
+    label: La quantité d'N/t des sarments ou taille des arbres
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_26
+    label: La quantité de lait vendu pour chaque type de lait vendu
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_27
+    label: Les taux protéiques de chaque type de lait vendu
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A16_28
+    label: Les quantités d'N/1000L des laits vendus pour chaque lait
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_29
+    label: La quantité d'oeuf vendu pour chaque type d'oeuf
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_30
+    label: Les PU de chaque type d'oeuf vendu
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_31
+    label: Les quantités d'N/t de chaque type d'oeuf vendu
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_32
+    label: Le nombre d'animaux vendus pour chaque type d'animal
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A16_33
+    label: Le PU des animaux vendus pour chaque type d'animal
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_34
+    label: La quantité d'N/t d'animal pour chaque type d'animal vendu
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_35
+    label: La quantité d'N stockée dans une PP (kg/an/ha)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A16_36
+    label: La quantité d'N/kg par UGB
+    nature: float
+    source: autofill
+    crop: ELV
+  - id: A16_37
+    label: Coeffcient de volatilisation de l'N par UGB
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_38
+    label: SAU en PP
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A16_39
+    label: Le coefficient d'équivalence de NO2 d'effluents en CO2
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_40
+    label: Le coefficient d'équivalence de NO2 du paturage en CO2
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A16_41
+    label: Le nombre de mois de présence en bâtiment/an des UGB
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: A16_42
+    label: Le nombre de mois de présence au pâturage/an des UGB
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: A16_43
+    label: Le coefficient d'équivalence d'1kg d'N d'engrais minéral (NO2) en CO2
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A16_44
+    label: Présence/Absence de fertilisation minérale ou apport de lisier ou fientes entre septembre et décembre
+    nature: boolean
+    source: autofill
+    crop: TTA
+  - id: A16_45
+    label: IFT herbicides
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_46
+    label: Mise en place d'actions de limitation de transferts
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A16_47
+    label: Epandage ou non de l'intégralité des effluents viti-vinicoles
+    nature: string
+    source: wizard
+    crop: VIT
+  - id: A16_48
+    label: Surface de cultures à forte capacité d'absorption d'azote pendant le drainage à l'automne
+    nature: float
+    source: wizard
+    crop: 'ARB
+
+      GC
+
+      ELV
+
+      MAR'
+  - id: A16_49
+    label: Coefficient de conversion de l'NO2 en N
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A16_50
+    label: Coefficient PRC
+    nature: string
+    source: autofill
+    crop: TTA
+- id: A17
+  dimension: A
+  label: Réduction de l'impact des pratiques sur la qualité de l'air
+  treshold: 6
+  items:
+  - id: A17_1
+    label: Nombre de passages d'engins émetteurs de particules primaires et de gaz précurseurs de particules secondaires sur
+      la culture principale
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: A17_2
+    label: Nombres de pratiques de réduction des émissions de particules primaires et de gaz précurseurs de particules secondaires
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A17_3
+    label: IFT total
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A17_4
+    label: Utilisation de matériel anti-dérive (panneaux récupérateurs ET buses anti-dérive)
+    nature: string
+    source: wizard
+    crop: VIT
+  - id: A17_5
+    label: Utilisation de matériel anti-dérive
+    nature: string
+    source: wizard
+    crop: 'GC
+
+      ARB
+
+      MAR'
+- id: A18
+  dimension: A
+  label: Atténuation de l'effet des pratiques sur le changement climatique
+  treshold: 6
+  items:
+  - id: A18_1
+    label: Quantité d'électricité utilisée (kWh)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A18_2
+    label: Quantité de fioul, essence, gazoil utilisée (L)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A18_3
+    label: Quantité de gaz naturel, propane/butane, biogaz (65% méthane utilisée (kg)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: A18_4
+    label: Les coefficients d'équivalence des énergies ci-dessus en kg éqCO2
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A18_5
+    label: Les quantités achetées et utilisées de cultures annuelles en grain
+    nature: string
+    source: other
+    crop: TTA
+  - id: A18_6
+    label: Les quantités achetées et utilisées de légumineuses/protéagineux
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_7
+    label: La quantité totale de concentrés, fourrages grossiers achetés et utilisés (hors luzerne deshydratée)
+    nature: string
+    source: other
+    crop: TTA
+  - id: A18_8
+    label: Le coefficient d'équivalence du CO2 des concentrés en CO2
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_9
+    label: Nombre d'UGB total
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A18_10
+    label: Le nombre de mois de présence en bâtiment des UGB
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: A18_11
+    label: Le nombre de mois de présence au pâturage des UGB
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: A18_12
+    label: Le coefficient d'équivalence du CO2 d'engrais minéral en CO2
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_13
+    label: Les quantités d'engrais minéraux utilisés
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_14
+    label: La quantité d'N/t pour chaque engrais minéral utilisé
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_15
+    label: Nombre d'UGB ruminants
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A18_16
+    label: Le coefficient d'équivalence de CH4 des ruminants en CO2
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A18_17
+    label: Le coefficient d'équivalence de CH4 d'effluents en CO2
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_18
+    label: Le coefficient d'équivalence de CH4 du paturage en CO2
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A18_19
+    label: SAU en PT
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A18_20
+    label: Surface Toujours en Herbe (STH)
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A18_21
+    label: Nombre de mètres de haies
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: A18_22
+    label: Nombre d'arbres en agroforesterie
+    nature: integer
+    source: other
+    crop: TTA
+  - id: A18_23
+    label: Les coefficients d'équivalence en CO2 des 4 SIE ci-dessus
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A18_24
+    label: Le coefficient d'équivalence de N2O d'effluents en CO2
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A18_25
+    label: Le coefficient d'équivalence de N2O du paturage en CO2
+    nature: string
+    source: autofill
+    crop: ELV
+  - id: A18_26
+    label: Le coefficient d'équivalence du N2O d'engrais minéral en CO2
+    nature: string
+    source: autofill
+    crop: TTA
+- id: A19
+  dimension: A
+  label: Réduire l'usage des produits phytosaitaires et des traitements vétérinaires
+  treshold: 6
+  items:
+  - id: A19_1
+    label: IFT total
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A19_2
+    label: Utilisation de produits CMR ou perturbateurs endocriniens
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: A19_3
+    label: Recours à des pratiques alternatives aux pesticides dans une stratégie d'action sur le stock initial
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A19_4
+    label: Recours à des pratiques alternatives aux pesticides dans une stratégie d'évitement
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A19_5
+    label: Recours à des pratiques alternatives aux pesticides dans une stratégie d'atténuation en végétation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A19_6
+    label: Recours à des pratiques alternatives aux pesticides dans une stratégie de solutions mécaniques
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: A19_7
+    label: Nombre de traitements vétérinaires unitaires réalisés sur le cheptel sur l'année
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A19_8
+    label: Effectif total du cheptel
+    nature: integer
+    source: autofill
+    crop: ELV
+  - id: A19_9
+    label: Traitements homéopathiques ou par essences naturelles, implantation de plantes deparasitaires
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: A19_10
+    label: Utilisation non systématique ou non utilisation de produits rémanents
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: A19_11
+    label: Absence de délais avant retour des animaux dans les parcelles
+    nature: string
+    source: wizard
+    crop: ELV
+- id: B1
+  dimension: B
+  label: Production alimentaire de l'exploitation
+  treshold: 6
+  items:
+  - id: B1_1
+    label: SAU consacrée à l'alimentation humaine ou animale
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B1_2
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: B1_3
+    label: Production de légumes secs, ou fruits et légumes pour l'alimentation humaine
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: B1_4
+    label: EA en production principale hors sol à destination de la consommation humaine
+    nature: string
+    source: wizard
+    crop: ELV
+- id: B2
+  dimension: B
+  label: Contribution à l'équilibre alimentaire mondial
+  treshold: 6
+  items:
+  - id: B2_1
+    label: La quantité totale achetée de concentrés pour le bétail d'origine non locale et achetée hors cadre d'un projet
+      territorial collectif
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B2_2
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: B2_3
+    label: SAU avec production de plantes riches en protéines
+    nature: float
+    source: autofill
+    crop: PV
+- id: B3
+  dimension: B
+  label: Démarche de qualité de la production alimentaire
+  treshold: 6
+  items:
+  - id: B3_1
+    label: IGP
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B3_2
+    label: AOP/AOC
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B3_3
+    label: AB
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: B3_4
+    label: Label Rouge et autres normes STG
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B3_5
+    label: Production à la qualité alimentaire reconnue de par sa qualité nutritionnelle (lait de système herbager, alimentation
+      à base de lin…)
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B4
+  dimension: B
+  label: Limitation des pertes et gaspillages
+  treshold: 6
+  items:
+  - id: B4_1
+    label: Participation à un programme de prévention, de formation contre le gaspillage
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_2
+    label: Présence d'une capacité de stockage adaptée et de qualité sur l'exploitation
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B4_3
+    label: Développement d'action sociale pour limiter les pertes de produits restés au champ
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_4
+    label: Dons à des associations d’aide alimentaire
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_5
+    label: Dons ou trocs/échanges de produits autre qu'aux associations
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_6
+    label: Commercialisation en alimentation humaine des produits non conformes aux standards des distributeurs ou des transformateurs
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_7
+    label: Transformation et valorisation à destination alimentaire de tout produit qui aurait été écarté, y compris co- et
+      sous-produits
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_8
+    label: Valorisation en alimentation animale sur l'exploitation ou en dehors (animaux de ferme, centre équestre, etc)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B4_9
+    label: Autres actions pour limiter les pertes et le gaspillage alimentaires
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B5
+  dimension: B
+  label: Liens sociaux, hédoniques et culturels à l'alimentation
+  treshold: 6
+  items:
+  - id: B5_1
+    label: Démarches favorisant le lien ou l'entre-aide entre le consommateur et le producteur (ouverture de l'exploitation
+      aux consommateurs, journées évenements...)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B5_2
+    label: Démarches favorisant l'apprentissage ou la culture autour de l'aliment (ferme pédagogique, communication de recettes
+      de cuisines...)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B5_3
+    label: Production significative de variétés d'aliments à forte valeur patrimoniale territoriale ou peu représentées en
+      commercialisation courante
+    nature: boolean
+    source: wizard
+    crop: TTA
+- id: B6
+  dimension: B
+  label: Engagement dans des démarches environnementales contractualisées et territoriales
+  treshold: 5
+  items:
+  - id: B6_1
+    label: Adhésion à des chartes environnementales, contractualisation de programmes locaux environnementaux
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B6_2
+    label: Contractualisation pour la prévention des risques naturels pour la collectivité
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B7
+  dimension: B
+  label: Services marchands au territoire
+  treshold: 3
+  items:
+  - id: B7_1
+    label: Présence/Absence de services marchands rendus au territoire
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B7_2
+    label: Présence/Absence d'agrotourisme
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B7_3
+    label: Présence/Absence de ferme pédagogique
+    nature: boolean
+    source: wizard
+    crop: TTA
+- id: B8
+  dimension: B
+  label: Valorisation par circuits courts ou de proximité
+  treshold: 5
+  items:
+  - id: B8_1
+    label: Part du CA en vente directe ou circuit court
+    nature: string
+    source: other
+    crop: TTA
+  - id: B8_2
+    label: Présence/Absence de vente de proximité au consommateur final ou circuit court de proximité de façon collective
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B8_3
+    label: Présence/Absence de vente de proximité au consommateur final ou circuit court de proximité de façon individuelle
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B8_4
+    label: Démarche de contractualisation avec des cantines locales / restauration locale / marchés publics locaux
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B9
+  dimension: B
+  label: Valorisation des ressources locales
+  treshold: 5
+  items:
+  - id: B9_1
+    label: Quantité d'aliments du bétail (fourrage, cultures annuelles) consommée et achetée localement ou produite sur l'exploitation
+    nature: string
+    source: other
+    crop: ELV
+  - id: B9_2
+    label: Quantité totale d'aliments du bétail (fourrage, cultures annuelles) consommée
+    nature: string
+    source: other
+    crop: ELV
+  - id: B9_3
+    label: Quantité d'engrais organiques consommée et achetée localement ou produite sur l'exploitation
+    nature: string
+    source: other
+    crop: TTA
+  - id: B9_4
+    label: Quantité totale d'engrais organiques consommée
+    nature: string
+    source: other
+    crop: TTA
+  - id: B9_5
+    label: Echanges paille fumier ou équivalent
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_6
+    label: Achat d'animaux sur le territoire local
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B9_7
+    label: Démarche de sélection variétale, reproduction et/ou échanges de semences
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_8
+    label: Valorisation, récupération d'eau de pluie
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: B9_9
+    label: Utilisation d’énergie d’origine agricole ou forestière produite sur le territoire local
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_10
+    label: Approvisionnements locaux pour la production d’énergie sur l’exploitation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_11
+    label: Approvisionnements en matériaux produits localement
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_12
+    label: Autres approvisionnements significatifs en produits locaux (emballage, bouteille, …)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_13
+    label: Réutilisation d’eau de station ou de process agro-alimentaire pour irrigation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_14
+    label: Valorisation de boues de station et/ou autres déchets urbains transformés
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B9_15
+    label: Autres utilisation de sous produit issu de la collectivité
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B10
+  dimension: B
+  label: 'Valorisation et qualité du parimoine : bâti, paysage et savoirs locaux et ressources naturelles'
+  treshold: 3
+  items:
+  - id: B10_1
+    label: Entretien ou restauration du bâti ancien
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B10_2
+    label: Qualité et typicité architecturale et intégration paysagère
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B10_3
+    label: Aménagement paysager des surfaces cultivées et lisières et forêts de l’exploitation
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B10_4
+    label: Mise en œuvre d’actions visant à valoriser le paysage
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B10_5
+    label: Contribution par les pratiques culturales ou d’élevage, à la valorisation et à l’entretien du paysage culturel
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B10_6
+    label: Qualité des abords du siège d’exploitation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B10_7
+    label: Contribution au maintien de savoirs locaux productifs ou culturels reconnus
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B10_8
+    label: Présence de races/variétés/cépages locaux à faibles effectifs rentrant dans l’acte de production
+    nature: boolean
+    source: wizard
+    crop: TTA
+- id: B11
+  dimension: B
+  label: Accessibilité de l'espace
+  treshold: 3
+  items:
+  - id: B11_1
+    label: Exploitation en zone rurale ou urbaine/péri-urbaine
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B11_2
+    label: Libre d'accès aux abords de l'EA en zone rurale
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B11_3
+    label: LIbre d'accès aux chemins privatifs de l'EA en zone urbaine et péri-urbaine
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B11_4
+    label: Entretien des chemins de randonnée ou de voirie d'accès
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B12
+  dimension: B
+  label: Gestion des déchets non organiques
+  treshold: 3
+  items:
+  - id: B12_1
+    label: Présence de batteries, huiles usagées, déchets amiantés sur l'EA
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_2
+    label: Présence/absence de tri, recyclage de batteries, huiles usagées, déchets amiantés sur l'EA
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_3
+    label: Présence de produits phytosanitaires, médicaments et déchets de soins à risques infectieux DASRI, produits lessiviels
+      et leurs emballages
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_4
+    label: Présence/absence de tri, recyclage de produits phytosanitaires, médicaments et déchets de soins à risques infectieux
+      DASRI, produits lessiviels et leurs emballages
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_5
+    label: Présence d'ampoules, tubes néons, ampoules infrarouges, à vapeur de sodium...
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_6
+    label: Présence/absence de tri, recyclage d'ampoules, tubes néons, ampoules infrarouges, à vapeur de sodium...
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_7
+    label: Présence de déchets plastiques et pneumatiques et présence/absence de tri, recyclage
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_8
+    label: Présence/absence de tri, recyclage de déchets plastiques et pneumatiques
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B12_9
+    label: Utilisation d'emballages réutilisables et/ou consigné pour la commercialisation des produits
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B12_10
+    label: Pratiques à risques (brûlage, dépôt sauvage, abandon...)
+    nature: float
+    source: wizard
+    crop: TTA
+- id: B13
+  dimension: B
+  label: Réseaux d'innovation et mutualisation du matériel
+  treshold: 3
+  items:
+  - id: B13_1
+    label: Participation à des réseaux de connaissance
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B13_2
+    label: Mutualisation des matériels / équipements / bâtiments / services
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B14
+  dimension: B
+  label: Contribution à l'emploi et gestion du salariat
+  treshold: 6
+  items:
+  - id: B14_1
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: B14_2
+    label: Nombre d'UTH
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B14_3
+    label: Création d’un emploi à plein temps sur l’exploitation dans les 5 dernières années
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B14_4
+    label: Création d’un emploi à temps partiel sur l’exploitation dans les 5 dernières années
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B14_5
+    label: Création d’un emploi dans un réseau de proximité dans les 5 dernières années
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B14_6
+    label: Plus de 50% de la main d’œuvre saisonnière réside de façon permanente sur le territoire
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B14_7
+    label: Présence d'un accident du travail ou maladie professionnelle parmi les salariés au cours de l'année précédente
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B14_8
+    label: Nature des tâches
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B14_9
+    label: Autonomie et responsabilité dans les missions confiées aux salariés
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B15
+  dimension: B
+  label: Mutualisation du travail
+  treshold: 6
+  items:
+  - id: B15_1
+    label: Banque de travail
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B15_2
+    label: Entraide (>10j/an)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B15_3
+    label: Appartenance à un groupement d'employeur
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B15_4
+    label: CUMA intégrale (plus de 80% du matériel est mis en commun)
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B15_5
+    label: Projets productifs en commun
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B16
+  dimension: B
+  label: Intensité et qualité au travail
+  treshold: 6
+  items:
+  - id: B16_1
+    label: Auto-estimation du plaisir et satisfaction au travail de 0 à 4
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B16_2
+    label: Nombre de semaines par an où l'agriculteur se sent surchargé
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B16_3
+    label: Estimez-vous nécessaire de prendre des congés ?
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B16_4
+    label: Prenez-vous des congés ?
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B16_5
+    label: Auto-estimation de la pénibilité du travail sur une échelle de 0 à -4 (très pénible)
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B17
+  dimension: B
+  label: Accueil, hygiène et sécurité au travail
+  treshold: 5
+  items:
+  - id: B17_1
+    label: Présence et accessibilité de toilettes et lavabo
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B17_2
+    label: Présence et accessibilité de douches et vestiaires
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B17_3
+    label: Salle de pause chauffée en hiver et au frais en été
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_4
+    label: Présence et accessibilité d'une cuisine équipée
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B17_5
+    label: 'Si présence de main d’œuvre temporaire : Accès à un logement aux normes sur l’exploitation ou mise en contact
+      des travailleurs temporaires avec des hébergements proches et accessibles'
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: B17_6
+    label: Mise en place d’un protocole sécurité au travail (document unique...)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_7
+    label: Formation des travailleurs à la sécurité et à l’utilisation du matériel
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_8
+    label: Mise à disposition et maintien des EPI adéquats
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_9
+    label: Mise à disposition de protection contre le soleil et la chaleur
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_10
+    label: Prise en compte des remarques des travailleurs en lien avec leurs sécurités dans l’organisation du travail et des
+      activités
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_11
+    label: Exposition des exploitants et salariés aux pesticides
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_12
+    label: Mise en oeuvre de technique de fumigation ou brumisation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B17_13
+    label: Local de stockage des pesticides conforme aux préconisations réglementaires
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B18
+  dimension: B
+  label: Formation
+  treshold: 5
+  items:
+  - id: B18_1
+    label: Nombre de jours par an et par UTH de formations
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B18_2
+    label: Accueil de stagiaire ou apprenti au cours des deux dernières années
+    nature: integer
+    source: wizard
+    crop: TTA
+  - id: B18_3
+    label: Nombre de groupes de professionnels ou d'étudiants accueillis
+    nature: integer
+    source: wizard
+    crop: TTA
+- id: B19
+  dimension: B
+  label: Implication sociale territoriale et solidarités
+  treshold: 6
+  items:
+  - id: B19_1
+    label: Implication dans des structures professionnelles agricoles
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B19_2
+    label: Implication dans des structures non agricoles (associatives et/ou électives) hors champ professionnel dans le territoire
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B19_3
+    label: Travail avec des structures relevant du champ de l'ESS et pratiques d’insertion et/ou d’expérimentation sociale
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B19_4
+    label: Implication de citoyens dans les travaux ou la vie de l'exploitation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B19_5
+    label: Accueil bénévole de public
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B19_6
+    label: Habitation très éloignée des lieux de production ou non
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B20
+  dimension: B
+  label: Démarche de transparence
+  treshold: 6
+  items:
+  - id: B20_1
+    label: Degré d'engagement dans un référentiel accessible publiquement
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B20_2
+    label: Implication des consommateurs
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B20_3
+    label: Transparence de l'agricuteur sur ses pratiques sur la base d'initiatives personnelles
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B21
+  dimension: B
+  label: Qualité de vie
+  treshold: 6
+  items:
+  - id: B21_1
+    label: Auto-Estimation de la qualité de vie sur une échelle de 0 à 6
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B22
+  dimension: B
+  label: Isolement
+  treshold: 6
+  items:
+  - id: B22_1
+    label: Auto-estimation de 0 à 3 du sentiment d'isolement géographique, social, culturel, accès aux services publics
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B22_2
+    label: Auto-estimation de 0 à 3 de la qualité d'accès aux services productifs de l'exploitation
+    nature: string
+    source: wizard
+    crop: TTA
+- id: B23
+  dimension: B
+  label: Bien-être animal
+  treshold: 6
+  items:
+  - id: B23_1
+    label: Accès à l’eau propre, alimentation suffisante
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_2
+    label: Bon état général du troupeau
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_3
+    label: Confort dans les bâtiments d’élevage et au champ
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_4
+    label: Conditions de transports (et abattage) respectant les obligations légales
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_5
+    label: Cahier des charges avec volet BEA
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_6
+    label: Arrêt des interventions douloureuses non curatives
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_7
+    label: Euthanasie systématique des animaux pathologiquement condamnés
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_8
+    label: Elevage en plein air permanent avec présence d'abris
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: B23_9
+    label: Abattage à la ferme des petits animaux avec étourdissement
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_10
+    label: Relation de l’éleveur à l’animal / vision du métier
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_11
+    label: Autres initiatives pour le BEA
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_12
+    label: Présence d’atelier de claustration permanente ou attache permanente
+    nature: boolean
+    source: wizard
+    crop: ELV
+  - id: B23_13
+    label: Surbooking dans les batiments
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_14
+    label: Zéro-pâturage
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_15
+    label: Ecornage à l’âge adulte
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_16
+    label: Ecornage sans anesthésie ou analgésie
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_17
+    label: Gavage forcé
+    nature: string
+    source: wizard
+    crop: ELV
+  - id: B23_18
+    label: Gestion respectueuse et favorable à la faune des zones d'habitat naturel
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_19
+    label: Mise en place de zones favorables à la construction des nids
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_20
+    label: Mesures de conservation des zones humides, mares et étangs
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_21
+    label: Mesure ponctuelle de protection de l'habitat d'une espèce menacée
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_22
+    label: Libre accès aux étabes et toitures de bâtiments pour la nidification
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_23
+    label: Destruction des nids
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_24
+    label: Utilisation d'adhésifs à insectes
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_25
+    label: Mise en place de zones attractives refuges spécifiques pour héberger la faune
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_26
+    label: Adaptation des dates d'interventions au calendrier de reproduction de la faune sauvage
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B23_27
+    label: Maintien d'habitats et de sources de nourritures dans les parcelles
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_28
+    label: Limitation de l'intensité des pratiques sur la surface à la périphérie des parcelles
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B23_29
+    label: Mise en place d'infrastructures spécifiques pour éviter les accidents
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_30
+    label: Largeur de travail réduite ou utilisation de barres d'effarouchement (moisson, herse, …)
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_31
+    label: Fauche ou récolte à faible vitesse (< 15 km/h) et permettant la fuite des animaux
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_32
+    label: Mise en place de clôtures et de filets respectant la faune sauvage
+    nature: float
+    source: wizard
+    crop: TTA
+  - id: B23_33
+    label: Utilisation exclusive de techniques non létales pour la lutte contre la déprédation
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: B23_34
+    label: Chantier de récolte nocturne
+    nature: string
+    source: autofill
+    crop: PV
+- id: C1
+  dimension: C
+  label: Capacité économique
+  treshold: 20
+  items:
+  - id: C1_1
+    label: EBE
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C1_2
+    label: Annuités des emprunts LMT (capital remboursé + intérêts)
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C1_3
+    label: Dotation aux amortissements
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C1_4
+    label: SMIC net annuel
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C1_5
+    label: Nombre d'UTH non salariées
+    nature: integer
+    source: autofill
+    crop: TTA
+  - id: C1_6
+    label: Auto-estimation de la capacité de l'exploitation à dégager un revenu suffisant sur une échelle de 0 à 5
+    nature: string
+    source: wizard
+    crop: TTA
+- id: C2
+  dimension: C
+  label: Capacité de remboursement
+  treshold: 12
+  items:
+  - id: C2_1
+    label: Annuités des emprunts LMT (capital remboursé + intérêts)
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C2_2
+    label: Frais financiers des emprunts CT
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C2_3
+    label: EBE
+    nature: string
+    source: autofill
+    crop: TTA
+- id: C3
+  dimension: C
+  label: Endettement structurel
+  treshold: 6
+  items:
+  - id: C3_1
+    label: Capital total restant dû des emprunts LMT
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C3_2
+    label: Capitaux propres
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C3_3
+    label: Provisions pour risques et charges
+    nature: string
+    source: other
+    crop: TTA
+- id: C4
+  dimension: C
+  label: Diversification productive
+  treshold: 10
+  items:
+  - id: C4_1
+    label: Produit brut de chaque atelier productif
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: C4_2
+    label: Chiffre d'affaires de chaque produit vendu
+    nature: string
+    source: wizard
+    crop: TTA
+- id: C5
+  dimension: C
+  label: Diversification et relations contractuelles
+  treshold: 10
+  items:
+  - id: C5_1
+    label: '% du chiffre d''affaires du client le plus important'
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: C5_2
+    label: Type de contrat pour la production principale
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: C5_3
+    label: Atelier principal en intégration et travail à façon intégral
+    nature: string
+    source: wizard
+    crop: TTA
+- id: C6
+  dimension: C
+  label: Sensibilité aux aides à la production
+  treshold: 6
+  items:
+  - id: C6_1
+    label: Montant des aides du 1er pilier de la PAC
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: C6_2
+    label: EBE
+    nature: string
+    source: autofill
+    crop: TTA
+- id: C7
+  dimension: C
+  label: Contribution des revenus extérieurs à l'indépendance de l'exploitation
+  treshold: 4
+  items:
+  - id: C7_1
+    label: Existe-t-il un revenu significatif extérieur (revenus non agricoles (revenus immobiliers, salaires extérieurs)
+      ou revenu du conjoint)) au sein du foyer de l'exploitant ?
+    nature: string
+    source: wizard
+    crop: TTA
+- id: C8
+  dimension: C
+  label: Transmissibilité économique
+  treshold: 15
+  items:
+  - id: C8_1
+    label: Actif immobilisé net hors foncier
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C8_2
+    label: EBE
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C8_3
+    label: Nombre d'UTH non salariées
+    nature: integer
+    source: autofill
+    crop: TTA
+- id: C9
+  dimension: C
+  label: Pérennité probable
+  treshold: 8
+  items:
+  - id: C9_1
+    label: 'A dire d''agriculteur : existence de l''exploitation dans 10 ans (quasi-certaine, probable souhaitée si possible,
+      disparition probable)'
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: C9_2
+    label: Foncier sécurisé
+    nature: string
+    source: wizard
+    crop: TTA
+  - id: C9_3
+    label: Présence de projet de développement futur du foncier
+    nature: boolean
+    source: wizard
+    crop: TTA
+  - id: C9_4
+    label: 'Structure du parcellaire : cohérent, éloignement, absence de découpage, absence de discontinuité...'
+    nature: string
+    source: wizard
+    crop: TTA
+- id: C10
+  dimension: C
+  label: Efficience brute du processus productif
+  treshold: 12
+  items:
+  - id: C10_1
+    label: Chiffre d'affaires total
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C10_2
+    label: Variation de stock
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C10_3
+    label: Production autoconsommée ou immobilisée
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C10_4
+    label: Ventes issues d'actions d'achat revente
+    nature: string
+    source: autofill
+    crop: TTA
+  - id: C10_5
+    label: 'Charges d''approvisionnement, travaux par tiers et services pour les cultures et l''élevage, énergétiques et eau,
+      matériel et bâtiment, transformation et de commercialisation, transports, de gestion et '
+    nature: string
+    source: autofill
+    crop: TTA
+- id: C11
+  dimension: C
+  label: Sobriété en intrants dans le processus productif
+  treshold: 8
+  items:
+  - id: C11_1
+    label: SAU totale
+    nature: float
+    source: autofill
+    crop: TTA
+  - id: C11_2
+    label: Charges d'approvisionnement, énergétiques et eau, achat du cheptel, transformation et commercialisation
+    nature: string
+    source: autofill
+    crop: TTA

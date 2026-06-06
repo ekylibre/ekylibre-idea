@@ -13,26 +13,41 @@
       %span.title= :auditor.tl
       %span.value= resource.auditor&.name
 
+-# Global IDEA score — shown only once at least one dimension has a
+-# computable indicator. Uses Idea::Indicators.global_score, which
+-# applies the IDEA4 "weakest-link" rule: the global score is the
+-# minimum of the three dimension ratios.
+- global = Idea::Indicators.global_score(resource)
+- if global[:percent].positive?
+  .idea-global-score
+    .idea-global-score__title= :global_idea_score.tl
+    .idea-global-score__value
+      %span.idea-global-score__number= "#{global[:score_3]} / 3"
+      %span.idea-global-score__percent= "(#{global[:percent]}%)"
+    - if global[:weakest]
+      .idea-global-score__hint= :weakest_dimension.tl(dim: global[:weakest])
+
+-# Group all 53 indicators by dimension so we can render one cobble per
+-# dimension (A / B / C). `group` carries the dimension code since the
+-# Phase 0 refonte of DiagnosticInstigator (cf. config/indicators.yml).
+-# Indicators created before that refonte fall under the legacy
+-# 'functional_diversity' bucket — surface them in dimension A so the
+-# diagnostic stays readable.
+- indicators_by_dim = resource.idea_diagnostic_items.sort_by { |i| [i.idea_id[0], i.idea_id[1..].to_i] }.group_by { |i| %w[A B C].include?(i.group) ? i.group : 'A' }
+
 = cobbles do |c|
-  - c.cobble(:functional_diversity) do
-    - fd_indicators = resource.idea_diagnostic_items # with scope please !
-    %table
-      - fd_indicators.sort_by(&:idea_id).each do |indicator|
-        %tr
-          %td.h4.idea-borders= "#{indicator.idea_id} - #{indicator.name}"
-          - ind_value = indicator.value.nil? ? '-' : indicator.value
-          - ind_ratio = indicator.value.nil? ? 0 : (ind_value / indicator.treshold.to_f)*100
-          %td.h4.idea-borders= "#{ind_value} / #{indicator.treshold}"
-          %td.idea-borders.idea-action-col
-            - if indicator.value.present?
-              %a= content_tag(:i, nil, class: 'icon icon-done')
-            - elsif Idea::Indicators.scripted_components.include?(indicator.idea_id)
-              %a.idea_duke{href: "#", data: {indicator: indicator.idea_id, diagnostic_id: resource.id}}= content_tag(:i, nil, class: 'icon icon-mode-edit')
-          %td.idea-borders.idea-action-col
-            %a.idea_restart{:href => "#", data: {indicator: "#{indicator.idea_id}", diagnostic_id: "#{resource.id}"}}= content_tag(:i, nil, class: 'icon icon-redo')
-        %tr.idea-borders
-          %td.idea-borders.idea-diag-progress.prog-bar{colspan: 2}
-            .progress-bar{ role:"progressbar", style: "width: #{ind_ratio}%;"}  &nbsp;
-          %td.idea-borders.idea.idea-diag-progress{colspan: 2}
+  - Idea::Indicators::DIMENSIONS.each do |dim_code, dim_label|
+    - dim_indicators = indicators_by_dim[dim_code] || []
+    - next if dim_indicators.empty?
+    - dim_summary = Idea::Indicators.dimension_score(resource, dim_code)
+    - cobble_title = "Dimension #{dim_code} — #{dim_label} — #{dim_summary[:score]} / #{dim_summary[:max]} (#{dim_summary[:percent]}%)"
+    - c.cobble("dimension_#{dim_code}".to_sym, title: cobble_title) do
+      .idea-dimension-summary
+        %span.idea-dimension-summary__progress
+          .progress-bar{ role: "progressbar", style: "width: #{dim_summary[:percent]}%;" }  &nbsp;
+        %span.idea-dimension-summary__count= :indicators_answered.tl(answered: dim_summary[:answered], total: dim_summary[:total])
+      %table.idea-dimension-table
+        - dim_indicators.each do |indicator|
+          = render 'indicator_row', indicator: indicator, resource: resource
 
 = render 'question_modal'

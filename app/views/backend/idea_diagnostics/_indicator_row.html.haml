@@ -1,0 +1,26 @@
+-# Render one IDEA indicator row inside any dimension cobble. Inputs:
+-#   indicator — IdeaDiagnosticItem
+-#   resource  — IdeaDiagnostic (parent)
+-#
+-# Score cell shows the current value over the indicator's treshold.
+-# Action cells expose the wizard trigger (when the indicator has at
+-# least one scripted item via Idea::Indicators.has_questions?) and the
+-# reset arrow. Indicators with no questionnaire only render the reset
+-# control, matching what Idea::Indicators.scripted_components decides.
+
+- ind_value = indicator.value.nil? ? '-' : indicator.value
+- ind_ratio = indicator.value.nil? ? 0 : (ind_value / indicator.treshold.to_f) * 100
+%tr
+  %td.h4.idea-borders= "#{indicator.idea_id} - #{indicator.name}"
+  %td.h4.idea-borders= "#{ind_value} / #{indicator.treshold}"
+  %td.idea-borders.idea-action-col
+    - if indicator.value.present?
+      %a= content_tag(:i, nil, class: 'icon icon-done')
+    - elsif Idea::Indicators.has_questions?(indicator.idea_id)
+      %a.idea_duke{href: "#", data: {indicator: indicator.idea_id, diagnostic_id: resource.id}}= content_tag(:i, nil, class: 'icon icon-mode-edit')
+  %td.idea-borders.idea-action-col
+    %a.idea_restart{href: "#", data: {indicator: indicator.idea_id, diagnostic_id: resource.id}}= content_tag(:i, nil, class: 'icon icon-redo')
+%tr.idea-borders
+  %td.idea-borders.idea-diag-progress.prog-bar{colspan: 2}
+    .progress-bar{role: "progressbar", style: "width: #{ind_ratio}%;"}  &nbsp;
+  %td.idea-borders.idea.idea-diag-progress{colspan: 2}
